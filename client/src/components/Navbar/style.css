@@ -1,0 +1,12 @@
+.navbar {
+    background-color: rgb(104, 41, 221);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+}
+
+ul {
+    float: right;
+    list-style: none;
+}

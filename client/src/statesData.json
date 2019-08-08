@@ -1,0 +1,352 @@
+[
+  {
+    "name": "Alabama",
+    "capital": "Montgomery",
+    "lat": "32.361538",
+    "long": "-86.279118",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Alabama.svg/200px-Flag_of_Alabama.svg.png"
+  },
+  {
+    "name": "Alaska",
+    "capital": "Juneau",
+    "lat": "58.301935",
+    "long": "-134.419740",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Alaska.svg/200px-Flag_of_Alaska.svg.png"
+  },
+  {
+    "name": "Arizona",
+    "capital": "Phoenix",
+    "lat": "33.448457",
+    "long": "-112.073844",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arizona.svg/200px-Flag_of_Arizona.svg.png"
+  },
+  {
+    "name": "Arkansas",
+    "capital": "Little Rock",
+    "lat": "34.736009",
+    "long": "-92.331122",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arkansas.svg/200px-Flag_of_Arkansas.svg.png"
+  },
+  {
+    "name": "California",
+    "capital": "Sacramento",
+    "lat": "38.555605",
+    "long": "-121.468926",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/200px-Flag_of_California.svg.png"
+  },
+  {
+    "name": "Colorado",
+    "capital": "Denver",
+    "lat": "39.7391667",
+    "long": "-104.984167",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Colorado_designed_by_Andrew_Carlisle_Carson.svg/200px-Flag_of_Colorado_designed_by_Andrew_Carlisle_Carson.svg.png"
+  },
+  {
+    "name": "Connecticut",
+    "capital": "Hartford",
+    "lat": "41.767",
+    "long": "-72.677",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Flag_of_Connecticut.svg/200px-Flag_of_Connecticut.svg.png"
+  },
+  {
+    "name": "Delaware",
+    "capital": "Dover",
+    "lat": "39.161921",
+    "long": "-75.526755",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Flag_of_Delaware.svg/200px-Flag_of_Delaware.svg.png"
+  },
+  {
+    "name": "Florida",
+    "capital": "Tallahassee",
+    "lat": "30.4518",
+    "long": "-84.27277",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Florida.svg/200px-Flag_of_Florida.svg.png"
+  },
+  {
+    "name": "Georgia",
+    "capital": "Atlanta",
+    "lat": "33.76",
+    "long": "-84.39",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Flag_of_Georgia_%28U.S._state%29.svg/200px-Flag_of_Georgia_%28U.S._state%29.svg.png"
+  },
+  {
+    "name": "Hawaii",
+    "capital": "Honolulu",
+    "lat": "21.30895",
+    "long": "-157.826182",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Flag_of_Hawaii.svg/200px-Flag_of_Hawaii.svg.png"
+  },
+  {
+    "name": "Idaho",
+    "capital": "Boise",
+    "lat": "43.613739",
+    "long": "-116.237651",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_Idaho.svg/200px-Flag_of_Idaho.svg.png"
+  },
+  {
+    "name": "Illinois",
+    "capital": "Springfield",
+    "lat": "39.783250",
+    "long": "-89.650373",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Illinois.svg/200px-Flag_of_Illinois.svg.png"
+  },
+  {
+    "name": "Indiana",
+    "capital": "Indianapolis",
+    "lat": "39.790942",
+    "long": "-86.147685",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Flag_of_Indiana.svg/200px-Flag_of_Indiana.svg.png"
+  },
+  {
+    "name": "Iowa",
+    "capital": "Des Moines",
+    "lat": "41.590939",
+    "long": "-93.620866",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Flag_of_Iowa.svg/200px-Flag_of_Iowa.svg.png"
+  },
+  {
+    "name": "Kansas",
+    "capital": "Topeka",
+    "lat": "39.04",
+    "long": "-95.69",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag_of_Kansas.svg/200px-Flag_of_Kansas.svg.png"
+  },
+  {
+    "name": "Kentucky",
+    "capital": "Frankfort",
+    "lat": "38.197274",
+    "long": "-84.86311",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Flag_of_Kentucky.svg/200px-Flag_of_Kentucky.svg.png"
+  },
+  {
+    "name": "Louisiana",
+    "capital": "Baton Rouge",
+    "lat": "30.45809",
+    "long": "-91.140229",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Flag_of_Louisiana.svg/200px-Flag_of_Louisiana.svg.png"
+  },
+  {
+    "name": "Maine",
+    "capital": "Augusta",
+    "lat": "44.323535",
+    "long": "-69.765261",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arizona.svg/200px-Flag_of_Arizona.svg.png"
+  },
+  {
+    "name": "Maryland",
+    "capital": "Annapolis",
+    "lat": "38.972945",
+    "long": "-76.501157",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Flag_of_Maine.svg/200px-Flag_of_Maine.svg.png"
+  },
+  {
+    "name": "Massachusetts",
+    "capital": "Boston",
+    "lat": "42.2352",
+    "long": "-71.0275",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Flag_of_Massachusetts.svg/200px-Flag_of_Massachusetts.svg.png"
+  },
+  {
+    "name": "Michigan",
+    "capital": "Lansing",
+    "lat": "42.7335",
+    "long": "-84.5467",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Flag_of_Michigan.svg/200px-Flag_of_Michigan.svg.png"
+  },
+  {
+    "name": "Minnesota",
+    "capital": "Saint Paul",
+    "lat": "44.95",
+    "long": "-93.094",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Minnesota.svg/200px-Flag_of_Minnesota.svg.png"
+  },
+  {
+    "name": "Mississippi",
+    "capital": "Jackson",
+    "lat": "32.320",
+    "long": "-90.207",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Flag_of_Mississippi.svg/200px-Flag_of_Mississippi.svg.png"
+  },
+  {
+    "name": "Missouri",
+    "capital": "Jefferson City",
+    "lat": "38.572954",
+    "long": "-92.189283",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Flag_of_Missouri.svg/200px-Flag_of_Missouri.svg.png"
+  },
+  {
+    "name": "Montana",
+    "capital": "Helana",
+    "lat": "46.595805",
+    "long": "-112.027031",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_Montana.svg/200px-Flag_of_Montana.svg.png"
+  },
+  {
+    "name": "Nebraska",
+    "capital": "Lincoln",
+    "lat": "40.809868",
+    "long": "-96.675345",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Flag_of_Nebraska.svg/200px-Flag_of_Nebraska.svg.png"
+  },
+  {
+    "name": "Nevada",
+    "capital": "Carson City",
+    "lat": "39.160949",
+    "long": "-119.753877",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Flag_of_Nevada.svg/200px-Flag_of_Nevada.svg.png"
+  },
+  {
+    "name": "New  Hampshire",
+    "capital": "Concord",
+    "lat": "43.220093",
+    "long": "-71.549127",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Flag_of_New_Hampshire.svg/200px-Flag_of_New_Hampshire.svg.png"
+  },
+  {
+    "name": "New Jersey",
+    "capital": "Trenton",
+    "lat": "40.221741",
+    "long": "-74.756138",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Flag_of_New_Jersey.svg/200px-Flag_of_New_Jersey.svg.png"
+  },
+  {
+    "name": "New Mexico",
+    "capital": "Santa Fe",
+    "lat": "35.667231",
+    "long": "-105.964575",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_New_Mexico.svg/200px-Flag_of_New_Mexico.svg.png"
+  },
+  {
+    "name": "New York",
+    "capital": "Albany",
+    "lat": "42.659829",
+    "long": "-73.781339",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_New_York.svg/200px-Flag_of_New_York.svg.png"
+  },
+  {
+    "name": "North Carolina",
+    "capital": "Raleigh",
+    "lat": "35.771",
+    "long": "-78.638",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Flag_of_North_Carolina.svg/200px-Flag_of_North_Carolina.svg.png"
+  },
+  {
+    "name": "North Dakota",
+    "capital": "Bismarck",
+    "lat": "48.813343",
+    "long": "-100.779004",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Flag_of_North_Dakota.svg/200px-Flag_of_North_Dakota.svg.png"
+  },
+  {
+    "name": "Ohio",
+    "capital": "Columbus",
+    "lat": "39.962245",
+    "long": "-83.000647",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Ohio.svg/200px-Flag_of_Ohio.svg.png"
+  },
+  {
+    "name": "Oklahoma",
+    "capital": "Oklahoma City",
+    "lat": "35.482309",
+    "long": "-97.534994",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Flag_of_Oklahoma.svg/200px-Flag_of_Oklahoma.svg.png"
+  },
+  {
+    "name": "Oregon",
+    "capital": "Salem",
+    "lat": "44.931109",
+    "long": "-123.029159",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Oregon.svg/200px-Flag_of_Oregon.svg.png"
+  },
+  {
+    "name": "Pennsylvania",
+    "capital": "Harrisburg",
+    "lat": "40.269789",
+    "long": "-76.875613",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Pennsylvania.svg/200px-Flag_of_Pennsylvania.svg.png"
+  },
+  {
+    "name": "Rhode Island",
+    "capital": "Providence",
+    "lat": "41.82355",
+    "long": "-71.422132",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Rhode_Island.svg/200px-Flag_of_Rhode_Island.svg.png"
+  },
+  {
+    "name": "South Carolina",
+    "capital": "Columbia",
+    "lat": "34.000",
+    "long": "-81.035",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Flag_of_South_Carolina.svg/200px-Flag_of_South_Carolina.svg.png"
+  },
+  {
+    "name": "South Dakota",
+    "capital": "Pierre",
+    "lat": "44.367966",
+    "long": "-100.336378",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_South_Dakota.svg/200px-Flag_of_South_Dakota.svg.png"
+  },
+  {
+    "name": "Tennessee",
+    "capital": "Nashville",
+    "lat": "36.165",
+    "long": "-86.784",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Tennessee.svg/200px-Flag_of_Tennessee.svg.png"
+  },
+  {
+    "name": "Texas",
+    "capital": "Austin",
+    "lat": "30.266667",
+    "long": "-97.75",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Flag_of_Texas.svg/200px-Flag_of_Texas.svg.png"
+  },
+  {
+    "name": "Utah",
+    "capital": "Salt Lake City",
+    "lat": "40.7547",
+    "long": "-111.892622",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Utah_%282011-present%29.svg/200px-Flag_of_Utah_%282011-present%29.svg.png"
+  },
+  {
+    "name": "Vermont",
+    "capital": "Montpelier",
+    "lat": "44.26639",
+    "long": "-72.57194",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Vermont.svg/200px-Flag_of_Vermont.svg.png"
+  },
+  {
+    "name": "Virginia",
+    "capital": "Richmond",
+    "lat": "37.54",
+    "long": "-77.46",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Flag_of_Virginia.svg/200px-Flag_of_Virginia.svg.png"
+  },
+  {
+    "name": "Washington",
+    "capital": "Olympia",
+    "lat": "47.042418",
+    "long": "-122.893077",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Flag_of_Washington.svg/200px-Flag_of_Washington.svg.png"
+  },
+  {
+    "name": "West Virginia",
+    "capital": "Charleston",
+    "lat": "38.349497",
+    "long": "-81.633294",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_West_Virginia.svg/200px-Flag_of_West_Virginia.svg.png"
+  },
+  {
+    "name": "Wisconsin",
+    "capital": "Madison",
+    "lat": "43.074722",
+    "long": "-89.384444",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flag_of_Wisconsin.svg/200px-Flag_of_Wisconsin.svg.png"
+  },
+  {
+    "name": "Wyoming",
+    "capital": "Cheyenne",
+    "lat": "41.145548",
+    "long": "-104.802042",
+    "flagImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Wyoming.svg/200px-Flag_of_Wyoming.svg.png"
+  }
+]

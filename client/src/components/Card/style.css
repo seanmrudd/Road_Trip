@@ -1,0 +1,9 @@
+img {
+  max-width: 250px;
+  height: auto;
+}
+
+.card {
+  margin: 2%;
+  float: left;
+}
