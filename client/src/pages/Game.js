@@ -7,95 +7,139 @@ import ScoreCard from "../components/ScoreCard";
 
 class Game extends Component {
     state = {
-        usStates
+        usStates,
+        stateJSON: [],
+        question: "",
+        incorrectAnswer: "",
+        correctAnswer: "",
+        answerArray: [],
+        answers: [],
+        numberCorrect: 0,
+        totalNumber: 0
     };
 
-    stateJSON;
-    incorrectAnswer;
-    correctAnswer = [];
-    answerArray = [];
-    answers = [];
-    numberCorrect = 0;
-    totalNumber = 0;
-
+    componentDidMount() {
+        this.pickState();
+    }
 
     //Function to pick random question
 
     randomQuestion = () => {
-        this.pickState();
-        this.totalNumber = this.totalNumber + 1;
+        let newTotalNumber = this.state.totalNumber + 1;
+        this.setState({ totalNumber: newTotalNumber });
+        let newQuestion = "";
+        this.setState({ question: newQuestion });
 
+        
         let i = Math.floor(Math.random() * 2);
         switch (i) {
             case 0: {
+                let newQuestion = `What is the capital of ${this.state.stateJSON.name}?`
+                this.setState({ question: newQuestion });
                 this.correctAnswerState();
                 this.incorrectAnswerState();
-                return `What is the capital of ${this.stateJSON.name}?`
-            }
+            } break;
             default:
+                let newQuestion = `What state does the capital ${this.state.stateJSON.capital} belong to?`
+                this.setState({ question: newQuestion });
                 this.correctAnswerCapital();
                 this.incorrectAnswerCapital();
-                return `What state does the capital ${this.stateJSON.capital} belong to?`
         }
-        
     }
 
     //Function to pick random state
 
     pickState = () => {
         let i = Math.floor(Math.random() * 50);
-        this.stateJSON = this.state.usStates[i];
-    }
+        let newStateJSON = this.state.usStates[i];
+        this.setState({ stateJSON: newStateJSON }, function(){
+            this.randomQuestion();
+        })
+    };
 
 
     //Function to grab correct answer
 
     correctAnswerState = () => {
-        this.correctAnswer= this.stateJSON.capital;
+        let newCorrectAnswer = this.state.stateJSON.capital;
+        this.setState({ correctAnswer: newCorrectAnswer });
         this.pushCorrectAnswer();
     }
 
     correctAnswerCapital = () => {
-        this.correctAnswer = this.stateJSON.name;
+        let newCorrectAnswer = this.state.stateJSON.name;
+        this.setState({ correctAnswer: newCorrectAnswer });
         this.pushCorrectAnswer();
     }
 
     pushCorrectAnswer = () => {
-        this.answerArray.push(this.correctAnswer);
+        this.state.answerArray.push(this.state.correctAnswer);
     }
 
     //Function to make 3 incorrect answers
 
     incorrectAnswerState = () => {
-        while (this.answerArray.length < 4) {
+        while (this.state.answerArray.length < 4) {
             let i = Math.floor(Math.random() * 50);
-            this.incorrectAnswer = this.state.usStates[i].capital;
-            if (this.answerArray.includes(this.incorrectAnswer)) {
-                this.incorrectAnswerState();
-            } else {
-                this.answerArray.push(this.incorrectAnswer);
-            };
+            let newIncorrectAnswer = this.state.usStates[i].capital;
+            this.setState({ incorrectAnswer: newIncorrectAnswer });
+            this.state.answerArray.push(this.state.incorrectAnswer);
+            // if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
+            //     this.incorrectAnswerState();
+            // } else {
+            //     this.state.answerArray.push(this.state.incorrectAnswer);
+            // };
         };
         this.randomizeAnswers();
     };
 
     incorrectAnswerCapital = () => {
-        while (this.answerArray.length < 4) {
+        while (this.state.answerArray.length < 4) {
             let i = Math.floor(Math.random() * 50);
-            this.incorrectAnswer = this.state.usStates[i].name;
-            if (this.answerArray.includes(this.incorrectAnswer)) {
-                this.incorrectAnswerState();
-            } else {
-                this.answerArray.push(this.incorrectAnswer);
-            };
+            let newIncorrectAnswer = this.state.usStates[i].name;
+            this.setState({ incorrectAnswer: newIncorrectAnswer });
+            console.log(this.state.incorrectAnswer);
+            this.state.answerArray.push(this.state.incorrectAnswer);
+            // if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
+            //     this.incorrectAnswerCapital();
+            // } else {
+            //     this.state.answerArray.push(this.state.incorrectAnswer);
+            // };
         };
         this.randomizeAnswers();
     };
 
+    // incorrectAnswerState = () => {
+    //     while (this.state.answerArray.length < 4) {
+    //         let i = Math.floor(Math.random() * 50);
+    //         this.incorrectAnswer = this.state.usStates[i].capital;
+    //         if (this.answerArray.includes(this.incorrectAnswer)) {
+    //             this.incorrectAnswerState();
+    //         } else {
+    //             this.answerArray.push(this.incorrectAnswer);
+    //         };
+    //     };
+    //     this.randomizeAnswers();
+    // };
+
+    // incorrectAnswerCapital = () => {
+    //     while (this.state.answerArray.length < 4) {
+    //         let i = Math.floor(Math.random() * 50);
+    //         this.incorrectAnswer = this.state.usStates[i].name;
+    //         if (this.answerArray.includes(this.incorrectAnswer)) {
+    //             this.incorrectAnswerState();
+    //         } else {
+    //             this.answerArray.push(this.incorrectAnswer);
+    //         };
+    //     };
+    //     this.randomizeAnswers();
+    // };
+
     //Function to randomize answers
 
     randomizeAnswers = () => {
-        this.answers = this.answerArray.sort();
+        let newAnswers = this.state.answerArray.sort();
+        this.setState({ answers: newAnswers });
     }
 
     //Function to validate user answer
@@ -104,8 +148,8 @@ class Game extends Component {
         // event.preventDefault();
 
         let userPick = event.target.attributes.getNamedItem("data-name").value;
-        
-        if(userPick === this.correctAnswer) {
+
+        if (userPick === this.correctAnswer) {
             this.addPoint();
             this.nextQuestion()
         } else {
@@ -115,7 +159,8 @@ class Game extends Component {
 
     //Function to add point
     addPoint = () => {
-        this.numberCorrect++;
+        let newNumberCorrect = this.state.numberCorrect;
+        this.setState({ numberCorrect: newNumberCorrect });
     }
 
     //Function to move on to next question
@@ -128,19 +173,19 @@ class Game extends Component {
     render() {
         return (
             <div>
-                <ScoreCard 
-                    numberCorrect = {this.numberCorrect}
-                    totalNumber = {this.totalNumber}
+                <ScoreCard
+                    numberCorrect={this.state.numberCorrect}
+                    totalNumber={this.state.totalNumber}
                 />
                 <QuestionCard
-                    question={this.randomQuestion()}
+                    question={this.state.question}
                 />
                 <AnswerCard
                     handleBtnClick={this.handleBtnClick}
-                    answer1={this.answers[0]}
-                    answer2={this.answers[1]}
-                    answer3={this.answers[2]}
-                    answer4={this.answers[3]}
+                    answer1={this.state.answers[0]}
+                    answer2={this.state.answers[1]}
+                    answer3={this.state.answers[2]}
+                    answer4={this.state.answers[3]}
                 />
 
             </div>
