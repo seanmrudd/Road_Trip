@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/api', require('./api'));
+router.get("/", function(req, res, done){
+    res.send("<p>bologna</p>");
+});
 
 module.exports = router;
