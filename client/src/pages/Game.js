@@ -9,9 +9,9 @@ class Game extends Component {
     state = {
         usStates,
         stateJSON: [],
-        question: null,
-        incorrectAnswer: null,
+        question: "",
         correctAnswer: null,
+        incorrectAnswer: null,
         answerArray: [],
         answers: [],
         numberCorrect: 0,
@@ -22,11 +22,27 @@ class Game extends Component {
         this.pickState();
     }
 
+
+    //Function to pick random state
+
+    pickState = () => {
+        let i = Math.floor(Math.random() * 50);
+        let newStateJSON = this.state.usStates[i];
+        this.setState({ stateJSON: newStateJSON }, function () {
+            this.randomQuestion();
+        })
+    };
+
+
     //Function to pick random question
 
     randomQuestion = () => {
         let newTotalNumber = this.state.totalNumber + 1;
         this.setState({ totalNumber: newTotalNumber });
+
+        this.setState({answerArray: []});
+        this.setState({answers: []});
+        this.setState({question: ""});
 
         let newQuestion = "";
         this.setState({ question: newQuestion });
@@ -47,101 +63,98 @@ class Game extends Component {
         }
     }
 
-    //Function to pick random state
-
-    pickState = () => {
-        let i = Math.floor(Math.random() * 50);
-        let newStateJSON = this.state.usStates[i];
-        this.setState({ stateJSON: newStateJSON }, function () {
-            this.randomQuestion();
-        })
-    };
-
 
     //Function to grab correct answer
 
     correctAnswerState = () => {
         let newCorrectAnswer = this.state.stateJSON.capital;
         this.setState({ correctAnswer: newCorrectAnswer }, function () {
-            this.incorrectAnswerState();
+            console.log(this.state.correctAnswer)
+            this.pushCorrectAnswerState();
         });
-        // this.pushCorrectAnswer();
         console.log(newCorrectAnswer);
     }
 
     correctAnswerCapital = () => {
         let newCorrectAnswer = this.state.stateJSON.name;
         this.setState({ correctAnswer: newCorrectAnswer }, function () {
-            this.incorrectAnswerCapital();
+            console.log(this.state.correctAnswer)
+            this.pushCorrectAnswerCapital();
         });
-        // this.pushCorrectAnswer();
         console.log(newCorrectAnswer);
     }
 
-    pushCorrectAnswer = () => {
-        this.state.answerArray.push(this.state.correctAnswer);
+    pushCorrectAnswerState = () => {
+        console.log(this.state.correctAnswer)
+        this.setState(prevState => ({
+            answerArray: [...prevState.answerArray, this.state.correctAnswer]
+        }), function () {
+            this.incorrectAnswerState();
+        })
     }
+
+    pushCorrectAnswerCapital = () => {
+        console.log(this.state.correctAnswer)
+        this.setState(prevState => ({
+            answerArray: [...prevState.answerArray, this.state.correctAnswer]
+        }), function () {
+            this.incorrectAnswerCapital();
+        })
+    }
+
 
     //Function to make 3 incorrect answers
 
     incorrectAnswerState = () => {
-        while (this.state.answerArray.length < 4) {
+        if (this.state.answerArray.length < 4) {
             let i = Math.floor(Math.random() * 50);
             let newIncorrectAnswer = this.state.usStates[i].capital;
             console.log(newIncorrectAnswer);
-            this.setState({ incorrectAnswer: newIncorrectAnswer });
-            this.state.answerArray.push(this.state.incorrectAnswer);
-            if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
-                this.incorrectAnswerState();
-            } else {
-                this.state.answerArray.push(this.state.incorrectAnswer);
-            };
+            this.setState({incorrectAnswer: newIncorrectAnswer}, function(){
+                console.log(this.state.incorrectAnswer)
+                if(this.state.answerArray.includes(this.state.incorrectAnswer)){
+                    this.incorrectAnswerCapital()
+                } else {
+                    this.setState(prevState => ({
+                        answerArray: [...prevState.answerArray, this.state.incorrectAnswer]
+                    }), function(){
+                        console.log(this.state.answerArray)
+                        if (this.state.answerArray.length < 4) {
+                            this.incorrectAnswerCapital();
+                        } else {
+                            this.randomizeAnswers();
+                        }
+                    })
+                }
+            })
         };
-        this.randomizeAnswers();
     };
 
     incorrectAnswerCapital = () => {
-        while (this.state.answerArray.length < 4) {
+        if (this.state.answerArray.length < 4){
             let i = Math.floor(Math.random() * 50);
             let newIncorrectAnswer = this.state.usStates[i].name;
             console.log(newIncorrectAnswer);
-            this.setState({ incorrectAnswer: newIncorrectAnswer });
-            console.log(this.state.incorrectAnswer);
-            this.state.answerArray.push(this.state.incorrectAnswer);
-            if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
-                this.incorrectAnswerCapital();
-            } else {
-                this.state.answerArray.push(this.state.incorrectAnswer);
-            };
-        };
-        this.randomizeAnswers();
+            this.setState({incorrectAnswer: newIncorrectAnswer}, function(){
+                console.log(this.state.incorrectAnswer)
+                if(this.state.answerArray.includes(this.state.incorrectAnswer)){
+                    this.incorrectAnswerCapital()
+                } else {
+                    this.setState(prevState => ({
+                        answerArray: [...prevState.answerArray, this.state.incorrectAnswer]
+                    }), function(){
+                        console.log(this.state.answerArray)
+                        if (this.state.answerArray.length < 4) {
+                            this.incorrectAnswerCapital();
+                        } else {
+                            this.randomizeAnswers();
+                        }
+                    })
+                }
+            })
+        }
     };
 
-    // incorrectAnswerState = () => {
-    //     while (this.state.answerArray.length < 4) {
-    //         let i = Math.floor(Math.random() * 50);
-    //         this.incorrectAnswer = this.state.usStates[i].capital;
-    //         if (this.answerArray.includes(this.incorrectAnswer)) {
-    //             this.incorrectAnswerState();
-    //         } else {
-    //             this.answerArray.push(this.incorrectAnswer);
-    //         };
-    //     };
-    //     this.randomizeAnswers();
-    // };
-
-    // incorrectAnswerCapital = () => {
-    //     while (this.state.answerArray.length < 4) {
-    //         let i = Math.floor(Math.random() * 50);
-    //         this.incorrectAnswer = this.state.usStates[i].name;
-    //         if (this.answerArray.includes(this.incorrectAnswer)) {
-    //             this.incorrectAnswerState();
-    //         } else {
-    //             this.answerArray.push(this.incorrectAnswer);
-    //         };
-    //     };
-    //     this.randomizeAnswers();
-    // };
 
     //Function to randomize answers
 
@@ -150,33 +163,38 @@ class Game extends Component {
         this.setState({ answers: newAnswers });
     }
 
+
     //Function to validate user answer
 
     handleBtnClick = event => {
-        // event.preventDefault();
+        event.preventDefault();
 
         let userPick = event.target.attributes.getNamedItem("data-name").value;
-
-        if (userPick === this.correctAnswer) {
-            this.addPoint();
+        console.log(userPick);
+        if (userPick === this.state.correctAnswer) {
             this.nextQuestion()
+            this.addPoint();
         } else {
-            this.randomQuestion();
+            this.pickState();
         }
     }
 
+
     //Function to add point
     addPoint = () => {
-        let newNumberCorrect = this.state.numberCorrect;
+        let newNumberCorrect = this.state.numberCorrect + 1;
         this.setState({ numberCorrect: newNumberCorrect });
     }
 
+
     //Function to move on to next question
     nextQuestion = () => {
-        this.randomQuestion();
+        this.pickState();
     }
 
+
     //Function to end game and head to GameResults.js
+
 
     render() {
         return (
