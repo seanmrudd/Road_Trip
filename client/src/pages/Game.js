@@ -9,9 +9,9 @@ class Game extends Component {
     state = {
         usStates,
         stateJSON: [],
-        question: "",
-        incorrectAnswer: "",
-        correctAnswer: "",
+        question: null,
+        incorrectAnswer: null,
+        correctAnswer: null,
         answerArray: [],
         answers: [],
         numberCorrect: 0,
@@ -27,23 +27,23 @@ class Game extends Component {
     randomQuestion = () => {
         let newTotalNumber = this.state.totalNumber + 1;
         this.setState({ totalNumber: newTotalNumber });
+
         let newQuestion = "";
         this.setState({ question: newQuestion });
 
-        
         let i = Math.floor(Math.random() * 2);
         switch (i) {
             case 0: {
                 let newQuestion = `What is the capital of ${this.state.stateJSON.name}?`
-                this.setState({ question: newQuestion });
-                this.correctAnswerState();
-                this.incorrectAnswerState();
+                this.setState({ question: newQuestion }, function () {
+                    this.correctAnswerState();
+                });
             } break;
             default:
                 let newQuestion = `What state does the capital ${this.state.stateJSON.capital} belong to?`
-                this.setState({ question: newQuestion });
-                this.correctAnswerCapital();
-                this.incorrectAnswerCapital();
+                this.setState({ question: newQuestion }, function () {
+                    this.correctAnswerCapital();
+                });
         }
     }
 
@@ -52,7 +52,7 @@ class Game extends Component {
     pickState = () => {
         let i = Math.floor(Math.random() * 50);
         let newStateJSON = this.state.usStates[i];
-        this.setState({ stateJSON: newStateJSON }, function(){
+        this.setState({ stateJSON: newStateJSON }, function () {
             this.randomQuestion();
         })
     };
@@ -62,14 +62,20 @@ class Game extends Component {
 
     correctAnswerState = () => {
         let newCorrectAnswer = this.state.stateJSON.capital;
-        this.setState({ correctAnswer: newCorrectAnswer });
-        this.pushCorrectAnswer();
+        this.setState({ correctAnswer: newCorrectAnswer }, function () {
+            this.incorrectAnswerState();
+        });
+        // this.pushCorrectAnswer();
+        console.log(newCorrectAnswer);
     }
 
     correctAnswerCapital = () => {
         let newCorrectAnswer = this.state.stateJSON.name;
-        this.setState({ correctAnswer: newCorrectAnswer });
-        this.pushCorrectAnswer();
+        this.setState({ correctAnswer: newCorrectAnswer }, function () {
+            this.incorrectAnswerCapital();
+        });
+        // this.pushCorrectAnswer();
+        console.log(newCorrectAnswer);
     }
 
     pushCorrectAnswer = () => {
@@ -82,13 +88,14 @@ class Game extends Component {
         while (this.state.answerArray.length < 4) {
             let i = Math.floor(Math.random() * 50);
             let newIncorrectAnswer = this.state.usStates[i].capital;
+            console.log(newIncorrectAnswer);
             this.setState({ incorrectAnswer: newIncorrectAnswer });
             this.state.answerArray.push(this.state.incorrectAnswer);
-            // if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
-            //     this.incorrectAnswerState();
-            // } else {
-            //     this.state.answerArray.push(this.state.incorrectAnswer);
-            // };
+            if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
+                this.incorrectAnswerState();
+            } else {
+                this.state.answerArray.push(this.state.incorrectAnswer);
+            };
         };
         this.randomizeAnswers();
     };
@@ -97,14 +104,15 @@ class Game extends Component {
         while (this.state.answerArray.length < 4) {
             let i = Math.floor(Math.random() * 50);
             let newIncorrectAnswer = this.state.usStates[i].name;
+            console.log(newIncorrectAnswer);
             this.setState({ incorrectAnswer: newIncorrectAnswer });
             console.log(this.state.incorrectAnswer);
             this.state.answerArray.push(this.state.incorrectAnswer);
-            // if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
-            //     this.incorrectAnswerCapital();
-            // } else {
-            //     this.state.answerArray.push(this.state.incorrectAnswer);
-            // };
+            if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
+                this.incorrectAnswerCapital();
+            } else {
+                this.state.answerArray.push(this.state.incorrectAnswer);
+            };
         };
         this.randomizeAnswers();
     };
