@@ -8,7 +8,7 @@ class Flags extends Component {
         return (
             <div>
                 <Jumbotron />
-                <Link to="/Game"><h3>Start Game</h3></Link><br/>
+                <Link to="/GameMode"><h3>Start Game</h3></Link><br/>
                 <Link to="/LeaderBoard">Leader Boards</Link>
                 <Link to="/PersonalBests">Personal Bests</Link>
                 <Link to="*">Need Log Out</Link>

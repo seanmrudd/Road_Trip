@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Card from "../components/Card";
 import usStates from "../statesData.json";
 import QuestionCard from "../components/QuestionCard";
 import AnswerCard from "../components/AnswerCard";
@@ -9,6 +8,7 @@ class Game extends Component {
     state = {
         usStates,
         stateJSON: [],
+        numberOfQuestions: 0,
         question: "",
         correctAnswer: null,
         incorrectAnswer: null,
@@ -19,18 +19,27 @@ class Game extends Component {
     };
 
     componentDidMount() {
-        this.pickState();
+        const data = this.props.location.data;
+        console.log(data)
+        this.setState({ numberOfQuestions: data }, function () {
+            console.log(this.state.numberOfQuestions)
+            this.pickState();
+        })
     }
 
 
     //Function to pick random state
 
     pickState = () => {
-        let i = Math.floor(Math.random() * 50);
-        let newStateJSON = this.state.usStates[i];
-        this.setState({ stateJSON: newStateJSON }, function () {
-            this.randomQuestion();
-        })
+        if (this.state.totalNumber < this.state.numberOfQuestions) {
+            let i = Math.floor(Math.random() * 50);
+            let newStateJSON = this.state.usStates[i];
+            this.setState({ stateJSON: newStateJSON }, function () {
+                this.randomQuestion();
+            })
+        } else {
+            this.endGame();
+        }
     };
 
 
@@ -40,9 +49,9 @@ class Game extends Component {
         let newTotalNumber = this.state.totalNumber + 1;
         this.setState({ totalNumber: newTotalNumber });
 
-        this.setState({answerArray: []});
-        this.setState({answers: []});
-        this.setState({question: ""});
+        this.setState({ answerArray: [] });
+        this.setState({ answers: [] });
+        this.setState({ question: "" });
 
         let newQuestion = "";
         this.setState({ question: newQuestion });
@@ -110,14 +119,14 @@ class Game extends Component {
             let i = Math.floor(Math.random() * 50);
             let newIncorrectAnswer = this.state.usStates[i].capital;
             console.log(newIncorrectAnswer);
-            this.setState({incorrectAnswer: newIncorrectAnswer}, function(){
+            this.setState({ incorrectAnswer: newIncorrectAnswer }, function () {
                 console.log(this.state.incorrectAnswer)
-                if(this.state.answerArray.includes(this.state.incorrectAnswer)){
+                if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
                     this.incorrectAnswerCapital()
                 } else {
                     this.setState(prevState => ({
                         answerArray: [...prevState.answerArray, this.state.incorrectAnswer]
-                    }), function(){
+                    }), function () {
                         console.log(this.state.answerArray)
                         if (this.state.answerArray.length < 4) {
                             this.incorrectAnswerCapital();
@@ -131,18 +140,18 @@ class Game extends Component {
     };
 
     incorrectAnswerCapital = () => {
-        if (this.state.answerArray.length < 4){
+        if (this.state.answerArray.length < 4) {
             let i = Math.floor(Math.random() * 50);
             let newIncorrectAnswer = this.state.usStates[i].name;
             console.log(newIncorrectAnswer);
-            this.setState({incorrectAnswer: newIncorrectAnswer}, function(){
+            this.setState({ incorrectAnswer: newIncorrectAnswer }, function () {
                 console.log(this.state.incorrectAnswer)
-                if(this.state.answerArray.includes(this.state.incorrectAnswer)){
+                if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
                     this.incorrectAnswerCapital()
                 } else {
                     this.setState(prevState => ({
                         answerArray: [...prevState.answerArray, this.state.incorrectAnswer]
-                    }), function(){
+                    }), function () {
                         console.log(this.state.answerArray)
                         if (this.state.answerArray.length < 4) {
                             this.incorrectAnswerCapital();
@@ -195,7 +204,12 @@ class Game extends Component {
 
     //Function to end game and head to GameResults.js
 
-    
+    endGame = () => {
+        this.props.history.push({
+            pathname:"/GameResults",
+            data: [this.state.numberCorrect +1, this.state.totalNumber]
+           });
+    }
 
 
 
