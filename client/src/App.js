@@ -9,6 +9,8 @@ import Menu from "./pages/Menu";
 import PersonalBests from "./pages/PersonalBests";
 import SignUp from "./pages/SignUp";
 import Wrapper from "./components/Wrapper";
+import FadeIn from "./pages/FadeIn";
+import GameMode from "./pages/GameMode";
 
 
 function App() {
@@ -16,14 +18,15 @@ function App() {
     <Router>
       <div>
         <Wrapper>
-          <Route exact path="/" component={Flags} />
-          <Route exact path="/Game" component={Game} />
-          <Route exact path="/GameResults" component={GameResults} />
-          <Route exact path="/LeaderBoard" component={LeaderBoard} />
-          <Route exact path="/Login" component={Login} />
-          <Route exact path="/Menu" component={Menu} />
-          <Route exact path="/PersonalBests" component={PersonalBests} />
-          <Route exact path="/SignUp" component={SignUp} />
+          <Route exact path="/" component={FadeIn} />
+          <Route  path="/Game" component={Game} />
+          <Route  path="/GameResults" component={GameResults} />
+          <Route  path="/LeaderBoard" component={LeaderBoard} />
+          <Route  path="/Login" component={Login} />
+          <Route  path="/Menu" component={Menu} />
+          <Route  path="/PersonalBests" component={PersonalBests} />
+          <Route  path="/SignUp" component={SignUp} />
+          <Route  path="/GameMode" component={GameMode} />
         </Wrapper>
       </div>
     </Router>

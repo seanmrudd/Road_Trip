@@ -21,7 +21,7 @@ class Signup extends Component {
                 password
             }
         }).then((response) => {
-            console.log(`Data: ${response.data}`)
+            console.log(`Data: ${response}`)
         }).catch((error) => {
             console.log(error)
         });

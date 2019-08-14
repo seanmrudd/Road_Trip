@@ -195,6 +195,9 @@ class Game extends Component {
 
     //Function to end game and head to GameResults.js
 
+    
+
+
 
     render() {
         return (
