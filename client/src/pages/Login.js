@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
 
     state = {
         email: "",
-        password: ""
+        password: "",
+        errorMessage: ""
     };
 
     handleSubmit = event => {
@@ -22,8 +24,16 @@ class Login extends Component {
             }
         }).then((response) => {
             console.log(`Data: ${response.data}`)
+            if (response.data) {
+                this.props.history.push("/Menu")
+            } else this.setState({
+                errorMessage: "Please provide an email and password."
+            })
         }).catch((error) => {
             console.log(error)
+            this.setState({
+                errorMessage: "Email or password is invalid."
+            })
         });
     };
 
@@ -43,8 +53,10 @@ class Login extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" name="email" onChange={this.handleChange} />
                     <input type="text" name="password" onChange={this.handleChange} />
-                    <button>Login</button>
+                    <button>Login</button><br />
                 </form>
+                Need to make an account? <Link to="/SignUp">Click Here</Link>
+                <p>{this.state.errorMessage}</p>
             </div>
         );
     }
