@@ -18,18 +18,67 @@ class GameMode extends Component {
     }
 
     render() {
-        return (
+        if (this.state.checked) {
+            return (
+                <div>
+                    <Link
+                        to={
+                            {
+                                pathname: "/game",
+                                data: [10]
+                            }
+                        }>
+                        <button>10 Questions</button>
+                    </Link>
+                    <Link
+                        to={
+                            {
+                                pathname: "/game",
+                                data: [20]
+                            }
+                        }>
+                        <button>20 Questions</button>
+                    </Link>
+                    <Link
+                        to={
+                            {
+                                pathname: "/game",
+                                data: [30]
+                            }
+                        }>
+                        <button>30 Questions</button>
+                    </Link>
+                    <p>Hard/Easy</p>
+                    <Switch onChange={this.handleChange} checked={this.state.checked} uncheckedIcon={false} checkedIcon={false} offColor="#F00" />
+                </div>
+            )
+        } else return (
             <div>
                 <Link
-                    to={{ pathname: "/game", data: [10] }}>
+                    to={
+                        {
+                            pathname: "/gameHard",
+                            data: [10]
+                        }
+                    }>
                     <button>10 Questions</button>
                 </Link>
                 <Link
-                    to={{ pathname: "/game", data: [20] }}>
+                    to={
+                        {
+                            pathname: "/gameHard",
+                            data: [20]
+                        }
+                    }>
                     <button>20 Questions</button>
                 </Link>
                 <Link
-                    to={{ pathname: "/game", data: [30] }}>
+                    to={
+                        {
+                            pathname: "/gameHard",
+                            data: [30]
+                        }
+                    }>
                     <button>30 Questions</button>
                 </Link>
                 <p>Hard/Easy</p>

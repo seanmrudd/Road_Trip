@@ -1,11 +1,9 @@
 const express = require("express");
-const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const cookieSession = require('cookie-session');
-const indexRouter = require("./routes/index");
-const userRouter = require("./routes/users");
+const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -25,9 +23,7 @@ app.use(cookieSession({
 //   app.use(express.static("client/build"));
 // }
 
-app.use("/", indexRouter);
-app.use("/authentication", userRouter);
-
+app.use(routes);
 
 app.listen(PORT, function() {
   console.log(`Server now listening on PORT ${PORT}!`);

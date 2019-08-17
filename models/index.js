@@ -1,4 +1,4 @@
 module.exports = {
-    Users: require("./user")
-  };
-  
+  Users: require("./user"),
+  LeaderBoard: require("./leaderBoard")
+};

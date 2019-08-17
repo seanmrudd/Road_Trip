@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Game from "./pages/Game";
+import GameHard from "./pages/GameHard";
 import GameResults from "./pages/GameResults";
 import LeaderBoard from "./pages/LeaderBoard";
 import Login from "./pages/Login";
@@ -19,6 +20,7 @@ function App() {
         <Wrapper>
           <Route exact path="/" component={FadeIn} />
           <Route  path="/Game" component={Game} />
+          <Route  path="/GameHard" component={GameHard} />
           <Route  path="/GameResults" component={GameResults} />
           <Route  path="/LeaderBoard" component={LeaderBoard} />
           <Route  path="/Login" component={Login} />

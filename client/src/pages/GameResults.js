@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
+import API from "../utils/API";
 
 class Flags extends Component {
 
     state = {
         numberCorrect: 0,
         totalNumber: 0,
-        percentage: 0
+        percentage: 0,
     }
 
     componentDidMount() {
+        this.loadResults();
+    }
+
+    loadResults = () => {
         const data = this.props.location.data;
         console.log(data)
         this.setState({
@@ -18,15 +23,23 @@ class Flags extends Component {
         },
             function () {
                 console.log(this.state.numberCorrect + "and" + this.state.totalNumber)
-                this.percentage()
+                this.percentage();
             })
+    }
+
+    saveToLeaderBoards = () => {
+        API.saveToLeaderBoards({
+            email: "test",
+            score: this.state.percentage
+        })
     }
 
     percentage = () => {
         console.log(((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2))
-        this.setState({ percentage: ((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2) })
+        this.setState({ percentage: ((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2) }, function (){
+            this.saveToLeaderBoards();
+        })
     }
-
 
     render() {
         return (

@@ -206,9 +206,9 @@ class Game extends Component {
 
     endGame = () => {
         this.props.history.push({
-            pathname:"/GameResults",
-            data: [this.state.numberCorrect +1, this.state.totalNumber]
-           });
+            pathname: "/GameResults",
+            data: [this.state.numberCorrect + 1, this.state.totalNumber]
+        });
     }
 
 
