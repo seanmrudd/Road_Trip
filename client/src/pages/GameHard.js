@@ -13,7 +13,8 @@ class GameHard extends Component {
         correctAnswer: "",
         userAnswer: "",
         numberCorrect: 0,
-        totalNumber: 0
+        totalNumber: 0,
+        difficulty: false
     };
 
     componentDidMount() {
@@ -131,7 +132,7 @@ class GameHard extends Component {
     endGame = () => {
         this.props.history.push({
             pathname: "/GameResults",
-            data: [this.state.numberCorrect, this.state.totalNumber]
+            data: [this.state.numberCorrect, this.state.totalNumber, this.state.difficulty]
         });
     }
 

@@ -1,18 +1,28 @@
-const express = require("express");
-const router = express.Router();
-const LBDB = require("../models/leaderBoard");
+const router = require("express").Router();
+const LeaderBoardController = require("../controllers/leaderBoardController");
 
-router.route("/scores")
-    .get(function (req, res) {
-        LBDB.LeaderBoard
-            .find(req.query)
-            .sort({ score: -1 })
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
-    })
-    .post(function (req, res) {
-        db.Book
-            .create(req.body)
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
-    })
+router.route("/tenEasy")
+    .get(LeaderBoardController.findAllTenEasy)
+    .post(LeaderBoardController.createTenEasy);
+
+router.route("/twentyEasy")
+    .get(LeaderBoardController.findAllTwentyEasy)
+    .post(LeaderBoardController.createTwentyEasy);
+
+router.route("/thirtyEasy")
+    .get(LeaderBoardController.findAllThirtyEasy)
+    .post(LeaderBoardController.createThirtyEasy);
+
+router.route("/tenHard")
+    .get(LeaderBoardController.findAllTenHard)
+    .post(LeaderBoardController.createTenHard);
+
+router.route("/twentyHard")
+    .get(LeaderBoardController.findAllTwentyHard)
+    .post(LeaderBoardController.createTwentyHard);
+
+router.route("/thirtyHard")
+    .get(LeaderBoardController.findAllThirtyHard)
+    .post(LeaderBoardController.createThirtyHard);
+
+module.exports = router;

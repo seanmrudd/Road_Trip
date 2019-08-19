@@ -8,6 +8,7 @@ class Flags extends Component {
         numberCorrect: 0,
         totalNumber: 0,
         percentage: 0,
+        difficulty: null
     }
 
     componentDidMount() {
@@ -19,7 +20,8 @@ class Flags extends Component {
         console.log(data)
         this.setState({
             numberCorrect: data[0],
-            totalNumber: data[1]
+            totalNumber: data[1],
+            difficulty: data[2]
         },
             function () {
                 console.log(this.state.numberCorrect + "and" + this.state.totalNumber)
@@ -28,15 +30,25 @@ class Flags extends Component {
     }
 
     saveToLeaderBoards = () => {
-        API.saveToLeaderBoards({
-            email: "test",
-            score: this.state.percentage
-        })
+        switch (this.state.numberCorrect, this.state.difficulty) {
+            case (10, true):
+                API.saveToLeaderBoardTenEasy({
+                    email: "test",
+                    score: this.state.percentage
+                })
+                console.log("working");
+            default:
+                console.log(this.state.numberCorrect + "and" + this.state.difficulty)
+        }
+        // API.saveToLeaderBoards({
+        //     email: "test",
+        //     score: this.state.percentage
+        // })
     }
 
     percentage = () => {
         console.log(((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2))
-        this.setState({ percentage: ((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2) }, function (){
+        this.setState({ percentage: ((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2) }, function () {
             this.saveToLeaderBoards();
         })
     }

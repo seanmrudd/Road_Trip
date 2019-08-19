@@ -15,7 +15,8 @@ class Game extends Component {
         answerArray: [],
         answers: [],
         numberCorrect: 0,
-        totalNumber: 0
+        totalNumber: 0,
+        difficulty: true
     };
 
     componentDidMount() {
@@ -208,7 +209,7 @@ class Game extends Component {
     endGame = () => {
         this.props.history.push({
             pathname: "/GameResults",
-            data: [this.state.numberCorrect, this.state.totalNumber]
+            data: [this.state.numberCorrect, this.state.totalNumber, this.state.difficulty]
         });
     }
 
