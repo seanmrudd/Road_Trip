@@ -93,7 +93,6 @@ class GameHard extends Component {
         event.preventDefault();
 
         if (this.state.userAnswer === this.state.correctAnswer) {
-            this.nextQuestion()
             this.addPoint();
         } else {
             this.pickState();
@@ -114,7 +113,10 @@ class GameHard extends Component {
     //Function to add point
     addPoint = () => {
         let newNumberCorrect = this.state.numberCorrect + 1;
-        this.setState({ numberCorrect: newNumberCorrect });
+        this.setState({ numberCorrect: newNumberCorrect }, function(){
+            console.log(this.state.correctAnswer);
+            this.nextQuestion()
+        });
     }
 
 
@@ -129,7 +131,7 @@ class GameHard extends Component {
     endGame = () => {
         this.props.history.push({
             pathname: "/GameResults",
-            data: [this.state.numberCorrect + 1, this.state.totalNumber]
+            data: [this.state.numberCorrect, this.state.totalNumber]
         });
     }
 

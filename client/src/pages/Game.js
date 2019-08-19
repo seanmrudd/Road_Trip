@@ -181,7 +181,6 @@ class Game extends Component {
         let userPick = event.target.attributes.getNamedItem("data-name").value;
         console.log(userPick);
         if (userPick === this.state.correctAnswer) {
-            this.nextQuestion()
             this.addPoint();
         } else {
             this.pickState();
@@ -192,7 +191,9 @@ class Game extends Component {
     //Function to add point
     addPoint = () => {
         let newNumberCorrect = this.state.numberCorrect + 1;
-        this.setState({ numberCorrect: newNumberCorrect });
+        this.setState({ numberCorrect: newNumberCorrect }, function(){
+            this.nextQuestion()
+        });
     }
 
 
@@ -207,7 +208,7 @@ class Game extends Component {
     endGame = () => {
         this.props.history.push({
             pathname: "/GameResults",
-            data: [this.state.numberCorrect + 1, this.state.totalNumber]
+            data: [this.state.numberCorrect, this.state.totalNumber]
         });
     }
 

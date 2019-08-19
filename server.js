@@ -1,6 +1,6 @@
 const express = require("express");
 const logger = require("morgan");
-const mongoose = require("mongoose");
+const mongoose = require('mongoose'); mongoose.set('useCreateIndex', true);
 const passport = require("passport");
 const cookieSession = require('cookie-session');
 const routes = require("./routes");
