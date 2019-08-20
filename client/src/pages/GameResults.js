@@ -30,26 +30,77 @@ class Flags extends Component {
     }
 
     saveToLeaderBoards = () => {
-        switch (this.state.numberCorrect, this.state.difficulty) {
-            case (10, true):
-                API.saveToLeaderBoardTenEasy({
-                    email: "test",
-                    score: this.state.percentage
-                })
-                console.log("working");
+        switch (this.state.difficulty) {
+            case (true):
+                switch (this.state.totalNumber) {
+                    case (10):
+                        API.saveToLeaderBoardTenEasy({
+                            email: "test",
+                            score: this.state.percentage
+                        })
+                            .catch(err => console.log(err));
+                        console.log("working");
+                        break
+                    case (20):
+                        API.saveToLeaderBoardTwentyEasy({
+                            email: "test",
+                            score: this.state.percentage
+                        })
+                            .catch(err => console.log(err));
+                        console.log("working");
+                        break
+                    case (30):
+                        API.saveToLeaderBoardThirtyEasy({
+                            email: "test",
+                            score: this.state.percentage
+                        })
+                            .catch(err => console.log(err));
+                        console.log("working");
+                        break
+                    default:
+                        console.log("not working")
+                }
+                break
+            case (false):
+                switch (this.state.totalNumber) {
+                    case (10):
+                        API.saveToLeaderBoardTenHard({
+                            email: "test",
+                            score: this.state.percentage
+                        })
+                            .catch(err => console.log(err));
+                        console.log("working");
+                        break
+                    case (20):
+                        API.saveToLeaderBoardTwentyHard({
+                            email: "test",
+                            score: this.state.percentage
+                        })
+                            .catch(err => console.log(err));
+                        console.log("working");
+                        break
+                    case (30):
+                        API.saveToLeaderBoardThirtyHard({
+                            email: "test",
+                            score: this.state.percentage
+                        })
+                            .catch(err => console.log(err));
+                        console.log("working");
+                        break
+                    default:
+                        console.log("not working")
+                }
+                break
             default:
-                console.log(this.state.numberCorrect + "and" + this.state.difficulty)
+                console.log("not working");
         }
-        // API.saveToLeaderBoards({
-        //     email: "test",
-        //     score: this.state.percentage
-        // })
     }
 
     percentage = () => {
         console.log(((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2))
         this.setState({ percentage: ((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2) }, function () {
             this.saveToLeaderBoards();
+            console.log(this.state.percentage + "and" + this.state.difficulty)
         })
     }
 
