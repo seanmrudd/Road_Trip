@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import API from "../utils/API";
 import Container from "../components/Container";
+import { Animated } from "react-animated-css";
 
 
 class LeaderBoard extends Component {
@@ -289,31 +290,34 @@ class LeaderBoard extends Component {
                 );
             case (""):
                 return (
-                    <div>
-                        <Container>
-                            <h1 className="text-center">Leader Boards</h1>
-                            <br /><br />
-                            <div className="text-center">
-                                <button value="tenEasy" name="LeaderBoardType" onClick={this.tenEasy}>Ten Easy</button>
-                                <span>&nbsp;</span>
-                                <button value="twentEasy" name="LeaderBoardType" onClick={this.twentyEasy}>Twenty Easy</button>
-                                <span>&nbsp;</span>
-                                <button value="thirtyEasy" name="LeaderBoardType" onClick={this.thirtyEasy}>Thirty Easy</button>
-                            </div>
-                            <br /><br />
-                            <div className="text-center">
-                                <button value="tenHard" name="LeaderBoardType" onClick={this.tenHard}>Ten Hard</button>
-                                <span>&nbsp;</span>
-                                <button value="twentyHard" name="LeaderBoardType" onClick={this.twentyHard}>Twenty Hard</button>
-                                <span>&nbsp;</span>
-                                <button value="thirtyHard" name="LeaderBoardType" onClick={this.thirtyHard}>Thirty Hard</button>
-                            </div>
-                            <br /><br />
-                            <div className="text-center">
-                                <Link to="/Menu"><button>Main Menu</button></Link>
-                            </div>
-                        </Container>
-                    </div>
+                    <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
+
+                        <div>
+                            <Container>
+                                <h1 className="text-center">Leader Boards</h1>
+                                <br /><br />
+                                <div className="text-center">
+                                    <button value="tenEasy" name="LeaderBoardType" onClick={this.tenEasy}>Ten Easy</button>
+                                    <span>&nbsp;</span>
+                                    <button value="twentEasy" name="LeaderBoardType" onClick={this.twentyEasy}>Twenty Easy</button>
+                                    <span>&nbsp;</span>
+                                    <button value="thirtyEasy" name="LeaderBoardType" onClick={this.thirtyEasy}>Thirty Easy</button>
+                                </div>
+                                <br /><br />
+                                <div className="text-center">
+                                    <button value="tenHard" name="LeaderBoardType" onClick={this.tenHard}>Ten Hard</button>
+                                    <span>&nbsp;</span>
+                                    <button value="twentyHard" name="LeaderBoardType" onClick={this.twentyHard}>Twenty Hard</button>
+                                    <span>&nbsp;</span>
+                                    <button value="thirtyHard" name="LeaderBoardType" onClick={this.thirtyHard}>Thirty Hard</button>
+                                </div>
+                                <br /><br />
+                                <div className="text-center">
+                                    <Link to="/Menu"><button>Main Menu</button></Link>
+                                </div>
+                            </Container>
+                        </div>
+                    </Animated>
                 );
             default:
                 return (

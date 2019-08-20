@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import Container from "../components/Container";
-
+import { Animated } from "react-animated-css";
 import Flag from "../assets/images/download.png";
 
 class FadeIn extends Component {
@@ -13,7 +13,7 @@ class FadeIn extends Component {
     componentDidMount() {
         setTimeout(() => {
             this.changeState();
-        }, 1000);
+        }, 3000);
     };
 
     changeState = () => {
@@ -31,11 +31,17 @@ class FadeIn extends Component {
         }
 
         return (
-            <div>
-                <Container>
-                    <img src={Flag} alt="Flag"></img>
-                </Container>
-            </div>
+            <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
+                <div>
+                    <Container>
+                        <div className="text-center">
+                            <h1>A Shrudder Production</h1>
+                            <br />
+                            <img src={Flag} alt="Flag"></img>
+                        </div>
+                    </Container>
+                </div>
+            </Animated>
         );
     }
 }

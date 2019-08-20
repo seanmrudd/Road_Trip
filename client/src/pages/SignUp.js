@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import Container from "../components/Container";
+import { Animated } from "react-animated-css";
 
 
 class Signup extends Component {
@@ -50,20 +51,22 @@ class Signup extends Component {
 
     render() {
         return (
-            <div>
-                <Container>
-                    <h2>Sign Up</h2>
-                    <form onSubmit={this.handleSubmit}>
-                        <input type="text" name="email" placeholder="Email" onChange={this.handleChange} />
-                        <span>&nbsp;</span>
-                        <input type="text" name="password" placeholder="Password" onChange={this.handleChange} />
-                        <span>&nbsp;</span>
-                        <button>Sign Up</button><br />
-                    </form>
-                    Already have an account? <Link to="/Login">Click Here</Link>
-                    <p>{this.state.errorMessage}</p>
-                </Container>
-            </div>
+            <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
+                <div>
+                    <Container>
+                        <h2>Sign Up</h2>
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" name="email" placeholder="Email" onChange={this.handleChange} />
+                            <span>&nbsp;</span>
+                            <input type="text" name="password" placeholder="Password" onChange={this.handleChange} />
+                            <span>&nbsp;</span>
+                            <button>Sign Up</button><br />
+                        </form>
+                        Already have an account? <Link to="/Login">Click Here</Link>
+                        <p>{this.state.errorMessage}</p>
+                    </Container>
+                </div>
+            </Animated>
         );
     }
 }

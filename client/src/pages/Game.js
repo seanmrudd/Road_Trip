@@ -4,6 +4,7 @@ import QuestionCard from "../components/QuestionCard";
 import AnswerCard from "../components/AnswerCard";
 import ScoreCard from "../components/ScoreCard";
 import Container from "../components/Container";
+import { Animated } from "react-animated-css";
 
 class Game extends Component {
     state = {
@@ -218,26 +219,28 @@ class Game extends Component {
 
     render() {
         return (
-            <div>
-                <Container>
-                    <ScoreCard
-                        numberCorrect={this.state.numberCorrect}
-                        totalNumber={this.state.totalNumber}
-                    />
-                    <br /><br />
-                    <QuestionCard
-                        question={this.state.question}
-                    />
-                    <br /><br />
-                    <AnswerCard
-                        handleBtnClick={this.handleBtnClick}
-                        answer1={this.state.answers[0]}
-                        answer2={this.state.answers[1]}
-                        answer3={this.state.answers[2]}
-                        answer4={this.state.answers[3]}
-                    />
-                </Container>
-            </div>
+            <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
+                <div>
+                    <Container>
+                        <ScoreCard
+                            numberCorrect={this.state.numberCorrect}
+                            totalNumber={this.state.totalNumber}
+                        />
+                        <br /><br />
+                        <QuestionCard
+                            question={this.state.question}
+                        />
+                        <br /><br />
+                        <AnswerCard
+                            handleBtnClick={this.handleBtnClick}
+                            answer1={this.state.answers[0]}
+                            answer2={this.state.answers[1]}
+                            answer3={this.state.answers[2]}
+                            answer4={this.state.answers[3]}
+                        />
+                    </Container>
+                </div>
+            </Animated>
         )
     };
 }
