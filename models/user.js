@@ -14,9 +14,12 @@ const UserSchema = new Schema({
         min: [6, "Not enought characters"]
     },
     data: {
-            tenQuestion: Number,
-            twentyQuestion: Number,
-            thirtyQuestion: Number
+            tenQuestionEasy: Number,
+            twentyQuestionEasy: Number,
+            thirtyQuestionEasy: Number,
+            tenQuestionHard: Number,
+            twentyQuestionHard: Number,
+            thirtyQuestionHard: Number
     }
 });
 
