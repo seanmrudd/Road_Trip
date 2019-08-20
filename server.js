@@ -20,9 +20,9 @@ app.use(cookieSession({
   keys: ['key1', 'key2']
 }));
 
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 app.use(routes);
 
