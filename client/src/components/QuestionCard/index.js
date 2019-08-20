@@ -3,9 +3,9 @@ import "./style.css";
 
 function QuestionCard(props) {
   return (
-    <div className="questionCard">
+    <div className="questionCard text-center">
       <div className="question-container">
-        <h3>{props.question}</h3>
+        <h2>{props.question}</h2>
       </div>
     </div>
   );

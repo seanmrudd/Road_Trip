@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import API from "../utils/API";
+import Container from "../components/Container";
 
 class Flags extends Component {
 
@@ -107,9 +108,15 @@ class Flags extends Component {
     render() {
         return (
             <div>
-                <h1>Game Results</h1>
-                <h3>You scored a {this.state.percentage}%.</h3>
-                <Link to="/Menu"><button>Main Menu</button></Link>
+                <Container>
+                    <h1 className="text-center">Game Results</h1>
+                    <br /><br />
+                    <h3 className="text-center">You scored a {this.state.percentage}%.</h3>
+                    <br />
+                    <p className="text-center">
+                        <Link to="/Menu"><button>Main Menu</button></Link>
+                    </p>
+                </Container>
             </div>
         );
     }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import usStates from "../statesData.json";
 import QuestionCard from "../components/QuestionCard";
 import ScoreCard from "../components/ScoreCard";
+import Container from "../components/Container";
 
 class GameHard extends Component {
 
@@ -98,14 +99,14 @@ class GameHard extends Component {
         } else {
             this.pickState();
         }
-        this.setState({userAnswer: ""})
+        this.setState({ userAnswer: "" })
 
     };
 
     handleChange = event => {
         let value = event.target.value;
         const name = event.target.name;
-        
+
         this.setState({
             [name]: value
         });
@@ -114,7 +115,7 @@ class GameHard extends Component {
     //Function to add point
     addPoint = () => {
         let newNumberCorrect = this.state.numberCorrect + 1;
-        this.setState({ numberCorrect: newNumberCorrect }, function(){
+        this.setState({ numberCorrect: newNumberCorrect }, function () {
             console.log(this.state.correctAnswer);
             this.nextQuestion()
         });
@@ -140,23 +141,27 @@ class GameHard extends Component {
     render() {
         return (
             <div>
-                <ScoreCard
-                    numberCorrect={this.state.numberCorrect}
-                    totalNumber={this.state.totalNumber}
-                />
-                <QuestionCard
-                    question={this.state.question}
-                />
-                <form>
-                    <input
-                    value={this.state.userAnswer}
-                    name="userAnswer"
-                    onChange={this.handleChange}
-                    type="text"
-                    autoComplete="off"
+                <Container>
+                    <ScoreCard
+                        numberCorrect={this.state.numberCorrect}
+                        totalNumber={this.state.totalNumber}
                     />
-                    <button onClick={this.handleSubmit}>Submit</button>
-                </form>
+                    <br /><br />
+                    <QuestionCard
+                        question={this.state.question}
+                    />
+                    <br /><br />
+                    <form className="text-center">
+                        <input
+                            value={this.state.userAnswer}
+                            name="userAnswer"
+                            onChange={this.handleChange}
+                            type="text"
+                            autoComplete="off"
+                        />&nbsp;
+                        <button onClick={this.handleSubmit}>Submit</button>
+                    </form>
+                </Container>
             </div>
         )
     };

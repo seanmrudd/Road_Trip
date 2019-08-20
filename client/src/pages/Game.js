@@ -3,6 +3,7 @@ import usStates from "../statesData.json";
 import QuestionCard from "../components/QuestionCard";
 import AnswerCard from "../components/AnswerCard";
 import ScoreCard from "../components/ScoreCard";
+import Container from "../components/Container";
 
 class Game extends Component {
     state = {
@@ -192,7 +193,7 @@ class Game extends Component {
     //Function to add point
     addPoint = () => {
         let newNumberCorrect = this.state.numberCorrect + 1;
-        this.setState({ numberCorrect: newNumberCorrect }, function(){
+        this.setState({ numberCorrect: newNumberCorrect }, function () {
             this.nextQuestion()
         });
     }
@@ -218,21 +219,24 @@ class Game extends Component {
     render() {
         return (
             <div>
-                <ScoreCard
-                    numberCorrect={this.state.numberCorrect}
-                    totalNumber={this.state.totalNumber}
-                />
-                <QuestionCard
-                    question={this.state.question}
-                />
-                <AnswerCard
-                    handleBtnClick={this.handleBtnClick}
-                    answer1={this.state.answers[0]}
-                    answer2={this.state.answers[1]}
-                    answer3={this.state.answers[2]}
-                    answer4={this.state.answers[3]}
-                />
-
+                <Container>
+                    <ScoreCard
+                        numberCorrect={this.state.numberCorrect}
+                        totalNumber={this.state.totalNumber}
+                    />
+                    <br /><br />
+                    <QuestionCard
+                        question={this.state.question}
+                    />
+                    <br /><br />
+                    <AnswerCard
+                        handleBtnClick={this.handleBtnClick}
+                        answer1={this.state.answers[0]}
+                        answer2={this.state.answers[1]}
+                        answer3={this.state.answers[2]}
+                        answer4={this.state.answers[3]}
+                    />
+                </Container>
             </div>
         )
     };

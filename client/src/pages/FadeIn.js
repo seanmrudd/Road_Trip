@@ -1,18 +1,9 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import Container from "../components/Container";
 
-// import Flag from "../assets/images/download.jpg";
+import Flag from "../assets/images/download.png";
 
-// const styles = {
-//     style: {
-//         position: "absolute",
-//         top: "50%",
-//         left: "50%",
-//         transform: "translate(-50%, -50%)",
-//         width: "200px",
-//         height: "auto"
-//     }
-// }
 class FadeIn extends Component {
 
     state = {
@@ -25,7 +16,7 @@ class FadeIn extends Component {
         }, 1000);
     };
 
-    changeState = () =>{
+    changeState = () => {
         this.setState({
             redirect: true
         })
@@ -35,13 +26,15 @@ class FadeIn extends Component {
     render() {
         if (this.state.redirect) {
             return (
-                <Redirect to = "login" />
+                <Redirect to="login" />
             )
         }
 
         return (
             <div>
-                <h1>I'm the fade in page.</h1>
+                <Container>
+                    <img src={Flag} alt="Flag"></img>
+                </Container>
             </div>
         );
     }

@@ -3,10 +3,10 @@ import "./style.css";
 
 function ScoreCard(props) {
   return (
-    <div className="scoreCard">
+    <div className="scoreCard text-center">
       <div className="score-container">
-        <h4>Question Number: {props.totalNumber}</h4>
-        <h4>Correct Answers So Far: {props.numberCorrect}</h4>
+        <h5>Question Number: {props.totalNumber}</h5>
+        <h5>Correct Answers So Far: {props.numberCorrect}</h5>
       </div>
     </div>
   );

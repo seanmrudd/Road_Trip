@@ -4,42 +4,42 @@ module.exports = {
   findAllTenEasy: function(req, res) {
     db.LeaderBoardTenEasy
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ score: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findAllTwentyEasy: function(req, res) {
     db.LeaderBoardTwentyEasy
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ score: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findAllThirtyEasy: function(req, res) {
     db.LeaderBoardThirtyEasy
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ score: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findAllTenHard: function(req, res) {
     db.LeaderBoardTenHard
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ score: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findAllTwentyHard: function(req, res) {
     db.LeaderBoardTwentyHard
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ score: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   findAllThirtyHard: function(req, res) {
     db.LeaderBoardThirtyHard
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ score: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

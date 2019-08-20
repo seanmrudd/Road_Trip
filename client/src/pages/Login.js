@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import Container from "../components/Container";
 
 class Login extends Component {
 
@@ -49,14 +50,18 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <h2>Login</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="email" onChange={this.handleChange} />
-                    <input type="text" name="password" onChange={this.handleChange} />
-                    <button>Login</button><br />
-                </form>
-                Need to make an account? <Link to="/SignUp">Click Here</Link>
-                <p>{this.state.errorMessage}</p>
+                <Container>
+                    <h2>Login</h2>
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text" name="email" placeholder="Email" onChange={this.handleChange} />
+                        <span>&nbsp;</span>
+                        <input type="text" name="password" placeholder="Password" onChange={this.handleChange} />
+                        <span>&nbsp;</span>
+                        <button>Login</button><br />
+                    </form>
+                    Need to make an account? <Link to="/SignUp">Click Here</Link>
+                    <p>{this.state.errorMessage}</p>
+                </Container>
             </div>
         );
     }

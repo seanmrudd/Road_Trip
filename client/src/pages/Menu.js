@@ -1,17 +1,31 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
 import { Link } from 'react-router-dom';
+import Flag from "../assets/images/download.png";
+import Container from "../components/Container";
+
 
 class Flags extends Component {
+
+
 
     render() {
         return (
             <div>
-                <Jumbotron />
-                <Link to="/GameMode"><h3>Start Game</h3></Link><br/>
-                <Link to="/LeaderBoard">Leader Boards</Link>
-                <Link to="/PersonalBests">Personal Bests</Link>
-                <Link to="*">Need Log Out</Link>
+                <Container>
+                    <h1 className="display-4 text-center">50 States and Capitals</h1>
+                    <p className="lead text-center">50 States and Capitals is a trivia game that will show you if you know your states and their capitals.</p>
+                    <p className="text-center">
+                        <img src={Flag} alt="flag"></img>
+                    </p>
+                    <Link to="/GameMode"><h3 className="text-center">Start Game</h3></Link><br />
+                    <p className="text-center">
+                        <Link to="/LeaderBoard">Leader Boards</Link>
+                        <span>&nbsp;&nbsp;| </span>
+                        <Link to="/PersonalBests">Personal Bests</Link>
+                        <span>&nbsp;&nbsp;| </span>
+                        <Link to="*">Need Log Out</Link>
+                    </p>
+                </Container>
             </div>
         );
     }
