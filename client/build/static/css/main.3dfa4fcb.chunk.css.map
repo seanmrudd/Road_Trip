@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAAA,WACQ,iBAAkB,CAClB,OAAQ,CACR,QAAS,CACT,sCAAgC,CAAhC,8BAAgC,CAChC,UAAW,CACX,WACR,CAPA,SACI,eAAgB,CAChB,oBACF","file":"main.3dfa4fcb.chunk.css","sourcesContent":[".wrapper {\n    min-height: 100%;\n    padding-bottom: 100px;\n  }"]}

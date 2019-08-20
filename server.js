@@ -7,7 +7,7 @@ const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 
 const app = express();
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Road_Trip", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://username:password1@ds311538.mlab.com:11538/heroku_nvxn4fdm", { useNewUrlParser: true });
 
 app.use(logger("dev"));
 app.use(express.json());
