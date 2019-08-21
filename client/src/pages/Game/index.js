@@ -5,6 +5,8 @@ import AnswerCard from "../../components/AnswerCard";
 import ScoreCard from "../../components/ScoreCard";
 import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
+import Col from "../../components/Col";
+import Row from "../../components/Row";
 
 class Game extends Component {
     state = {
@@ -222,15 +224,21 @@ class Game extends Component {
             <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                 <div>
                     <Container>
-                        <ScoreCard
-                            numberCorrect={this.state.numberCorrect}
-                            totalNumber={this.state.totalNumber}
-                        />
-                        <br /><br />
-                        <QuestionCard
-                            question={this.state.question}
-                        />
-                        <br /><br />
+                        <Row>
+                            <Col>
+                                <ScoreCard
+                                    numberCorrect={this.state.numberCorrect}
+                                    totalNumber={this.state.totalNumber}
+                                />
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <QuestionCard
+                                    question={this.state.question}
+                                />
+                            </Col>
+                        </Row>
                         <AnswerCard
                             handleBtnClick={this.handleBtnClick}
                             answer1={this.state.answers[0]}

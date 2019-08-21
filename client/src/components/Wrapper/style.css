@@ -1,4 +1,16 @@
-.wrapper {
-    min-height: 100%;
-    padding-bottom: 100px;
-  }
+body {
+  background-color: rgb(157, 224, 255)
+}
+
+button {
+  margin: 5px
+}
+
+h1 {
+  text-shadow: 2px 2px 8px white;
+}
+
+.border {
+  padding: 5px;
+  margin: 5px;
+}

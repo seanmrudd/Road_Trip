@@ -25,7 +25,7 @@ class Flags extends Component {
                             <span>&nbsp;&nbsp;| </span>
                             <Link to="/PersonalBests">Personal Bests</Link>
                             <span>&nbsp;&nbsp;| </span>
-                            <Link to="*">Need Log Out</Link>
+                            <Link to="/Login">Log Out</Link>
                         </p>
                     </Container>
                 </div>

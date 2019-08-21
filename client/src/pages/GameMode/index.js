@@ -3,6 +3,8 @@ import Switch from "react-switch";
 import { Link } from 'react-router-dom';
 import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
+import Row from "../../components/Row";
+import Col from "../../components/Col";
 
 class GameMode extends Component {
 
@@ -25,39 +27,54 @@ class GameMode extends Component {
                 <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                     <div>
                         <Container>
-                            <Link
-                                to={
-                                    {
-                                        pathname: "/game",
-                                        data: [10]
-                                    }
-                                }>
-                                <button>10 Questions</button>
-                            </Link>&nbsp;&nbsp;
-                        <Link
-                                to={
-                                    {
-                                        pathname: "/game",
-                                        data: [20]
-                                    }
-                                }>
-                                <button>20 Questions</button>
-                            </Link>&nbsp;&nbsp;
-                        <Link
-                                to={
-                                    {
-                                        pathname: "/game",
-                                        data: [30]
-                                    }
-                                }>
-                                <button>30 Questions</button>
-                            </Link>
-                            <br /><br />
-                            <p className="text-center">Hard/Easy</p>
-                            <p className="text-center">
-                                <Switch onChange={this.handleChange} checked={this.state.checked} uncheckedIcon={false} checkedIcon={false} offColor="#F00" />
-                            </p>
-                            <br/>
+                            <h1 className="text-center">Game Mode</h1>
+                            <p className="text-center">Easy for multiple choice and hard for fill in the blank.  (Yes, capitilization and spelling matter.)</p>
+                            <div className="text-center border border-success">
+                                <Row>
+                                    <Col>
+                                        <Link
+                                            to={
+                                                {
+                                                    pathname: "/game",
+                                                    data: [10]
+                                                }
+                                            }>
+                                            <button>10 Questions</button>
+                                        </Link>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <Link
+                                            to={
+                                                {
+                                                    pathname: "/game",
+                                                    data: [20]
+                                                }
+                                            }>
+                                            <button>20 Questions</button>
+                                        </Link>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <Link
+                                            to={
+                                                {
+                                                    pathname: "/game",
+                                                    data: [30]
+                                                }
+                                            }>
+                                            <button>30 Questions</button>
+                                        </Link>
+                                    </Col>
+                                </Row>
+                                <p className="text-center">Hard/Easy</p>
+                                <p className="text-center">
+                                    <Switch onChange={this.handleChange} checked={this.state.checked} uncheckedIcon={false} checkedIcon={false} offColor="#F00" />
+                                </p>
+                            </div>
+                            <br />
                             <p className="text-center">
                                 <Link to="/Menu"><button>Main Menu</button></Link>
                             </p>
@@ -69,38 +86,53 @@ class GameMode extends Component {
             <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                 <div>
                     <Container>
-                        <Link
-                            to={
-                                {
-                                    pathname: "/gameHard",
-                                    data: [10]
-                                }
-                            }>
-                            <button>10 Questions</button>
-                        </Link>&nbsp;&nbsp;
-                    <Link
-                            to={
-                                {
-                                    pathname: "/gameHard",
-                                    data: [20]
-                                }
-                            }>
-                            <button>20 Questions</button>
-                        </Link>&nbsp;&nbsp;
-                    <Link
-                            to={
-                                {
-                                    pathname: "/gameHard",
-                                    data: [30]
-                                }
-                            }>
-                            <button>30 Questions</button>
-                        </Link>
-                        <br /><br />
-                        <p className="text-center">Hard/Easy</p>
-                        <p className="text-center">
-                            <Switch onChange={this.handleChange} checked={this.state.checked} uncheckedIcon={false} checkedIcon={false} offColor="#F00" />
-                        </p>
+                        <h1 className="text-center">Game Mode</h1>
+                        <p className="text-center">Easy for multiple choice and hard for fill in the blank.  (Yes, capitilization and spelling matter.)</p>
+                        <div className="text-center border border-danger">
+                            <Row>
+                                <Col>
+                                    <Link
+                                        to={
+                                            {
+                                                pathname: "/gameHard",
+                                                data: [10]
+                                            }
+                                        }>
+                                        <button>10 Questions</button>
+                                    </Link>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Link
+                                        to={
+                                            {
+                                                pathname: "/gameHard",
+                                                data: [20]
+                                            }
+                                        }>
+                                        <button>20 Questions</button>
+                                    </Link>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Link
+                                        to={
+                                            {
+                                                pathname: "/gameHard",
+                                                data: [30]
+                                            }
+                                        }>
+                                        <button>30 Questions</button>
+                                    </Link>
+                                </Col>
+                            </Row>
+                            <p className="text-center">Hard/Easy</p>
+                            <p className="text-center">
+                                <Switch onChange={this.handleChange} checked={this.state.checked} uncheckedIcon={false} checkedIcon={false} offColor="#F00" />
+                            </p>
+                        </div>
                         <br />
                         <p className="text-center">
                             <Link to="/Menu"><button>Main Menu</button></Link>
