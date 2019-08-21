@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import Flag from "../assets/images/download.png";
-import Container from "../components/Container";
+import Flag from "../../assets/images/download.png";
+import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
 
 

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import usStates from "../statesData.json";
-import QuestionCard from "../components/QuestionCard";
-import AnswerCard from "../components/AnswerCard";
-import ScoreCard from "../components/ScoreCard";
-import Container from "../components/Container";
+import usStates from "../../statesData.json";
+import QuestionCard from "../../components/QuestionCard";
+import AnswerCard from "../../components/AnswerCard";
+import ScoreCard from "../../components/ScoreCard";
+import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
 
 class Game extends Component {

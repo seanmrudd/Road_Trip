@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import Container from "../components/Container";
+import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
-import Flag from "../assets/images/download.png";
+import Flag from "../../assets/images/download.png";
 
 class FadeIn extends Component {
 

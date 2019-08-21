@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
-import Container from "../components/Container";
+import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
 
 
