@@ -228,7 +228,9 @@ class Game extends Component {
                             <Col>
                                 <ScoreCard
                                     numberCorrect={this.state.numberCorrect}
+                                    numberOfQuestions={this.state.numberOfQuestions}
                                     totalNumber={this.state.totalNumber}
+                                    numberOfQuestionsAsked={this.state.totalNumber - 1}
                                 />
                             </Col>
                         </Row>

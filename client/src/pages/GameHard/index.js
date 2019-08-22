@@ -144,13 +144,13 @@ class GameHard extends Component {
                 <Container>
                     <ScoreCard
                         numberCorrect={this.state.numberCorrect}
+                        numberOfQuestions={this.state.numberOfQuestions}
                         totalNumber={this.state.totalNumber}
+                        numberOfQuestionsAsked={this.state.totalNumber - 1}
                     />
-                    <br /><br />
                     <QuestionCard
                         question={this.state.question}
                     />
-                    <br /><br />
                     <form className="text-center">
                         <input
                             value={this.state.userAnswer}

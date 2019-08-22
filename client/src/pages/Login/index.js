@@ -56,7 +56,7 @@ class Login extends Component {
 
 
     render() {
-        const isAuthenticated = window.localStorage.getItem("isAuthenticated");
+        // const isAuthenticated = window.localStorage.getItem("isAuthenticated");
 
         // if (isAuthenticated){
         //     return <Redirect to="/Menu" />

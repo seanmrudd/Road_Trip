@@ -158,8 +158,8 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>10 Question (Easy)</h3>
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">10 Question (Easy)</h3>
                                 <div className="text-center">
                                     <h5>1st:  {this.state.LeaderBoardTenEasy[0].email} scored a {this.state.LeaderBoardTenEasy[0].score}</h5>
                                     <h5>2nd:  {this.state.LeaderBoardTenEasy[1].email} scored a {this.state.LeaderBoardTenEasy[1].score}</h5>
@@ -180,8 +180,8 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>20 Question (Easy)</h3>
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">20 Question (Easy)</h3>
                                 <div className="text-center">
                                     <h5>1st:  {this.state.LeaderBoardTwentyEasy[0].email} scored a {this.state.LeaderBoardTwentyEasy[0].score}</h5>
                                     <h5>2nd:  {this.state.LeaderBoardTwentyEasy[1].email} scored a {this.state.LeaderBoardTwentyEasy[1].score}</h5>
@@ -202,8 +202,8 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>30 Question (Easy)</h3>
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">30 Question (Easy)</h3>
                                 <div className="text-center">
                                     <h5>1st:  {this.state.LeaderBoardThirtyEasy[0].email} scored a {this.state.LeaderBoardThirtyEasy[0].score}</h5>
                                     <h5>2nd:  {this.state.LeaderBoardThirtyEasy[1].email} scored a {this.state.LeaderBoardThirtyEasy[1].score}</h5>
@@ -224,8 +224,8 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>10 Question (Hard)</h3>
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">10 Question (Hard)</h3>
                                 <div className="text-center">
                                     <h5>1st:  {this.state.LeaderBoardTenHard[0].email} scored a {this.state.LeaderBoardTenHard[0].score}</h5>
                                     <h5>2nd:  {this.state.LeaderBoardTenHard[1].email} scored a {this.state.LeaderBoardTenHard[1].score}</h5>
@@ -246,8 +246,8 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>20 Question (Hard)</h3>
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">20 Question (Hard)</h3>
                                 <div className="text-center">
                                     <h5>1st:  {this.state.LeaderBoardTwentyHard[0].email} scored a {this.state.LeaderBoardTwentyHard[0].score}</h5>
                                     <h5>2nd:  {this.state.LeaderBoardTwentyHard[1].email} scored a {this.state.LeaderBoardTwentyHard[1].score}</h5>
@@ -268,8 +268,8 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>30 Question (Hard)</h3>
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">30 Question (Hard)</h3>
                                 <div className="text-center">
                                     <h5>1st:  {this.state.LeaderBoardThirtyHard[0].email} scored a {this.state.LeaderBoardThirtyHard[0].score}</h5>
                                     <h5>2nd:  {this.state.LeaderBoardThirtyHard[1].email} scored a {this.state.LeaderBoardThirtyHard[1].score}</h5>

@@ -1,12 +1,19 @@
 .card-btn {
-    border-radius: 40%;
+    border-radius: 50%;
     font-size: 2rem;
     padding: 5px 5px;
     border: 0;
     width: 100%;
     background-color: white;
+    border-color: rgb(255, 103, 103);
+    border-width: 3px;
+    border: 3px rgb(255, 103, 103);
 }
 
-.button:hover {
+/* .card-btn:hover {
     background-color: rgb(255, 103, 103);
+} */
+
+.card-btn:focus {
+    outline: none;
 }
