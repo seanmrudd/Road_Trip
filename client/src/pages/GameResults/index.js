@@ -36,7 +36,7 @@ class Flags extends Component {
                 switch (this.state.totalNumber) {
                     case (10):
                         API.saveToLeaderBoardTenEasy({
-                            email: "test",
+                            email: localStorage.getItem("email"),
                             score: this.state.percentage
                         })
                             .catch(err => console.log(err));
@@ -44,7 +44,7 @@ class Flags extends Component {
                         break
                     case (20):
                         API.saveToLeaderBoardTwentyEasy({
-                            email: "test",
+                            email: localStorage.getItem("email"),
                             score: this.state.percentage
                         })
                             .catch(err => console.log(err));
@@ -52,7 +52,7 @@ class Flags extends Component {
                         break
                     case (30):
                         API.saveToLeaderBoardThirtyEasy({
-                            email: "test",
+                            email: localStorage.getItem("email"),
                             score: this.state.percentage
                         })
                             .catch(err => console.log(err));
@@ -66,7 +66,7 @@ class Flags extends Component {
                 switch (this.state.totalNumber) {
                     case (10):
                         API.saveToLeaderBoardTenHard({
-                            email: "test",
+                            email: localStorage.getItem("email"),
                             score: this.state.percentage
                         })
                             .catch(err => console.log(err));
@@ -74,7 +74,7 @@ class Flags extends Component {
                         break
                     case (20):
                         API.saveToLeaderBoardTwentyHard({
-                            email: "test",
+                            email: localStorage.getItem("email"),
                             score: this.state.percentage
                         })
                             .catch(err => console.log(err));
@@ -82,7 +82,7 @@ class Flags extends Component {
                         break
                     case (30):
                         API.saveToLeaderBoardThirtyHard({
-                            email: "test",
+                            email: localStorage.getItem("email"),
                             score: this.state.percentage
                         })
                             .catch(err => console.log(err));

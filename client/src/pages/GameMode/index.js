@@ -5,6 +5,7 @@ import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
 import Row from "../../components/Row";
 import Col from "../../components/Col";
+import "./style.css";
 
 class GameMode extends Component {
 
@@ -39,7 +40,7 @@ class GameMode extends Component {
                                                     data: [10]
                                                 }
                                             }>
-                                            <button>10 Questions</button>
+                                            <button className="btnEasy">10 Questions</button>
                                         </Link>
                                     </Col>
                                 </Row>
@@ -52,7 +53,7 @@ class GameMode extends Component {
                                                     data: [20]
                                                 }
                                             }>
-                                            <button>20 Questions</button>
+                                            <button className="btnEasy">20 Questions</button>
                                         </Link>
                                     </Col>
                                 </Row>
@@ -65,7 +66,7 @@ class GameMode extends Component {
                                                     data: [30]
                                                 }
                                             }>
-                                            <button>30 Questions</button>
+                                            <button className="btnEasy">30 Questions</button>
                                         </Link>
                                     </Col>
                                 </Row>
@@ -76,7 +77,7 @@ class GameMode extends Component {
                             </div>
                             <br />
                             <p className="text-center">
-                                <Link to="/Menu"><button>Main Menu</button></Link>
+                                <Link to="/Menu"><button className="leaderBoardMenu">Main Menu</button></Link>
                             </p>
                         </Container>
                     </div>
@@ -98,7 +99,7 @@ class GameMode extends Component {
                                                 data: [10]
                                             }
                                         }>
-                                        <button>10 Questions</button>
+                                        <button className="btnHard">10 Questions</button>
                                     </Link>
                                 </Col>
                             </Row>
@@ -111,7 +112,7 @@ class GameMode extends Component {
                                                 data: [20]
                                             }
                                         }>
-                                        <button>20 Questions</button>
+                                        <button className="btnHard">20 Questions</button>
                                     </Link>
                                 </Col>
                             </Row>
@@ -124,7 +125,7 @@ class GameMode extends Component {
                                                 data: [30]
                                             }
                                         }>
-                                        <button>30 Questions</button>
+                                        <button className="btnHard">30 Questions</button>
                                     </Link>
                                 </Col>
                             </Row>
@@ -135,7 +136,7 @@ class GameMode extends Component {
                         </div>
                         <br />
                         <p className="text-center">
-                            <Link to="/Menu"><button>Main Menu</button></Link>
+                            <Link to="/Menu"><button className="leaderBoardMenu">Main Menu</button></Link>
                         </p>
                     </Container>
                 </div>
