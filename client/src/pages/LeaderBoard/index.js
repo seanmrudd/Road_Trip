@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import API from "../../utils/API";
 import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
+import Row from "../../components/Row";
+import Col from "../../components/Col";
+import "./style.css";
 
 
 class LeaderBoard extends Component {
@@ -155,20 +158,17 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>10 Question (Easy)</h3>
-                                <br /><br />
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">10 Question (Easy)</h3>
                                 <div className="text-center">
-                                    <h5>1st:  {this.state.LeaderBoardTenEasy[0].email} {this.state.LeaderBoardTenEasy[0].score}</h5>
-                                    <h5>2nd:  {this.state.LeaderBoardTenEasy[1].email} {this.state.LeaderBoardTenEasy[1].score}</h5>
-                                    <h5>3rd:  {this.state.LeaderBoardTenEasy[2].email} {this.state.LeaderBoardTenEasy[2].score}</h5>
-                                    <h5>4th:  {this.state.LeaderBoardTenEasy[3].email} {this.state.LeaderBoardTenEasy[3].score}</h5>
-                                    <h5>5th:  {this.state.LeaderBoardTenEasy[4].email} {this.state.LeaderBoardTenEasy[4].score}</h5>
+                                    <h5>1st:  {this.state.LeaderBoardTenEasy[0].email} scored a {this.state.LeaderBoardTenEasy[0].score}</h5>
+                                    <h5>2nd:  {this.state.LeaderBoardTenEasy[1].email} scored a {this.state.LeaderBoardTenEasy[1].score}</h5>
+                                    <h5>3rd:  {this.state.LeaderBoardTenEasy[2].email} scored a {this.state.LeaderBoardTenEasy[2].score}</h5>
+                                    <h5>4th:  {this.state.LeaderBoardTenEasy[3].email} scored a {this.state.LeaderBoardTenEasy[3].score}</h5>
+                                    <h5>5th:  {this.state.LeaderBoardTenEasy[4].email} scored a {this.state.LeaderBoardTenEasy[4].score}</h5>
                                 </div>
-                                <br /><br />
                                 <div className="text-center">
                                     <Link to="/Menu"><button>Main Menu</button></Link>
-                                    <span>&nbsp;</span>
                                     <button value="" name="LeaderBoardType" onClick={this.leaderBoardMenu}>Back</button>
                                 </div>
                             </Container>
@@ -180,20 +180,17 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>20 Question (Easy)</h3>
-                                <br /><br />
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">20 Question (Easy)</h3>
                                 <div className="text-center">
-                                    <h5>1st:  {this.state.LeaderBoardTwentyEasy[0].email} {this.state.LeaderBoardTwentyEasy[0].score}</h5>
-                                    <h5>2nd:  {this.state.LeaderBoardTwentyEasy[1].email} {this.state.LeaderBoardTwentyEasy[1].score}</h5>
-                                    <h5>3rd:  {this.state.LeaderBoardTwentyEasy[2].email} {this.state.LeaderBoardTwentyEasy[2].score}</h5>
-                                    <h5>4th:  {this.state.LeaderBoardTwentyEasy[3].email} {this.state.LeaderBoardTwentyEasy[3].score}</h5>
-                                    <h5>5th:  {this.state.LeaderBoardTwentyEasy[4].email} {this.state.LeaderBoardTwentyEasy[4].score}</h5>
+                                    <h5>1st:  {this.state.LeaderBoardTwentyEasy[0].email} scored a {this.state.LeaderBoardTwentyEasy[0].score}</h5>
+                                    <h5>2nd:  {this.state.LeaderBoardTwentyEasy[1].email} scored a {this.state.LeaderBoardTwentyEasy[1].score}</h5>
+                                    <h5>3rd:  {this.state.LeaderBoardTwentyEasy[2].email} scored a {this.state.LeaderBoardTwentyEasy[2].score}</h5>
+                                    <h5>4th:  {this.state.LeaderBoardTwentyEasy[3].email} scored a {this.state.LeaderBoardTwentyEasy[3].score}</h5>
+                                    <h5>5th:  {this.state.LeaderBoardTwentyEasy[4].email} scored a {this.state.LeaderBoardTwentyEasy[4].score}</h5>
                                 </div>
-                                <br /><br />
                                 <div className="text-center">
                                     <Link to="/Menu"><button>Main Menu</button></Link>
-                                    <span>&nbsp;</span>
                                     <button value="" name="LeaderBoardType" onClick={this.leaderBoardMenu}>Back</button>
                                 </div>
                             </Container>
@@ -205,20 +202,17 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>30 Question (Easy)</h3>
-                                <br /><br />
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">30 Question (Easy)</h3>
                                 <div className="text-center">
-                                    <h5>1st:  {this.state.LeaderBoardThirtyEasy[0].email} {this.state.LeaderBoardThirtyEasy[0].score}</h5>
-                                    <h5>2nd:  {this.state.LeaderBoardThirtyEasy[1].email} {this.state.LeaderBoardThirtyEasy[1].score}</h5>
-                                    <h5>3rd:  {this.state.LeaderBoardThirtyEasy[2].email} {this.state.LeaderBoardThirtyEasy[2].score}</h5>
-                                    <h5>4th:  {this.state.LeaderBoardThirtyEasy[3].email} {this.state.LeaderBoardThirtyEasy[3].score}</h5>
-                                    <h5>5th:  {this.state.LeaderBoardThirtyEasy[4].email} {this.state.LeaderBoardThirtyEasy[4].score}</h5>
+                                    <h5>1st:  {this.state.LeaderBoardThirtyEasy[0].email} scored a {this.state.LeaderBoardThirtyEasy[0].score}</h5>
+                                    <h5>2nd:  {this.state.LeaderBoardThirtyEasy[1].email} scored a {this.state.LeaderBoardThirtyEasy[1].score}</h5>
+                                    <h5>3rd:  {this.state.LeaderBoardThirtyEasy[2].email} scored a {this.state.LeaderBoardThirtyEasy[2].score}</h5>
+                                    <h5>4th:  {this.state.LeaderBoardThirtyEasy[3].email} scored a {this.state.LeaderBoardThirtyEasy[3].score}</h5>
+                                    <h5>5th:  {this.state.LeaderBoardThirtyEasy[4].email} scored a {this.state.LeaderBoardThirtyEasy[4].score}</h5>
                                 </div>
-                                <br /><br />
                                 <div className="text-center">
                                     <Link to="/Menu"><button>Main Menu</button></Link>
-                                    <span>&nbsp;</span>
                                     <button value="" name="LeaderBoardType" onClick={this.leaderBoardMenu}>Back</button>
                                 </div>
                             </Container>
@@ -230,20 +224,17 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>10 Question (Hard)</h3>
-                                <br /><br />
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">10 Question (Hard)</h3>
                                 <div className="text-center">
-                                    <h5>1st:  {this.state.LeaderBoardTenHard[0].email} {this.state.LeaderBoardTenHard[0].score}</h5>
-                                    <h5>2nd:  {this.state.LeaderBoardTenHard[1].email} {this.state.LeaderBoardTenHard[1].score}</h5>
-                                    <h5>3rd:  {this.state.LeaderBoardTenHard[2].email} {this.state.LeaderBoardTenHard[2].score}</h5>
-                                    <h5>4th:  {this.state.LeaderBoardTenHard[3].email} {this.state.LeaderBoardTenHard[3].score}</h5>
-                                    <h5>5th:  {this.state.LeaderBoardTenHard[4].email} {this.state.LeaderBoardTenHard[4].score}</h5>
+                                    <h5>1st:  {this.state.LeaderBoardTenHard[0].email} scored a {this.state.LeaderBoardTenHard[0].score}</h5>
+                                    <h5>2nd:  {this.state.LeaderBoardTenHard[1].email} scored a {this.state.LeaderBoardTenHard[1].score}</h5>
+                                    <h5>3rd:  {this.state.LeaderBoardTenHard[2].email} scored a {this.state.LeaderBoardTenHard[2].score}</h5>
+                                    <h5>4th:  {this.state.LeaderBoardTenHard[3].email} scored a {this.state.LeaderBoardTenHard[3].score}</h5>
+                                    <h5>5th:  {this.state.LeaderBoardTenHard[4].email} scored a {this.state.LeaderBoardTenHard[4].score}</h5>
                                 </div>
-                                <br /><br />
                                 <div className="text-center">
                                     <Link to="/Menu"><button>Main Menu</button></Link>
-                                    <span>&nbsp;</span>
                                     <button value="" name="LeaderBoardType" onClick={this.leaderBoardMenu}>Back</button>
                                 </div>
                             </Container>
@@ -255,20 +246,17 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>20 Question (Hard)</h3>
-                                <br /><br />
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">20 Question (Hard)</h3>
                                 <div className="text-center">
-                                    <h5>1st:  {this.state.LeaderBoardTwentyHard[0].email} {this.state.LeaderBoardTwentyHard[0].score}</h5>
-                                    <h5>2nd:  {this.state.LeaderBoardTwentyHard[1].email} {this.state.LeaderBoardTwentyHard[1].score}</h5>
-                                    <h5>3rd:  {this.state.LeaderBoardTwentyHard[2].email} {this.state.LeaderBoardTwentyHard[2].score}</h5>
-                                    <h5>4th:  {this.state.LeaderBoardTwentyHard[3].email} {this.state.LeaderBoardTwentyHard[3].score}</h5>
-                                    <h5>5th:  {this.state.LeaderBoardTwentyHard[4].email} {this.state.LeaderBoardTwentyHard[4].score}</h5>
+                                    <h5>1st:  {this.state.LeaderBoardTwentyHard[0].email} scored a {this.state.LeaderBoardTwentyHard[0].score}</h5>
+                                    <h5>2nd:  {this.state.LeaderBoardTwentyHard[1].email} scored a {this.state.LeaderBoardTwentyHard[1].score}</h5>
+                                    <h5>3rd:  {this.state.LeaderBoardTwentyHard[2].email} scored a {this.state.LeaderBoardTwentyHard[2].score}</h5>
+                                    <h5>4th:  {this.state.LeaderBoardTwentyHard[3].email} scored a {this.state.LeaderBoardTwentyHard[3].score}</h5>
+                                    <h5>5th:  {this.state.LeaderBoardTwentyHard[4].email} scored a {this.state.LeaderBoardTwentyHard[4].score}</h5>
                                 </div>
-                                <br /><br />
                                 <div className="text-center">
                                     <Link to="/Menu"><button>Main Menu</button></Link>
-                                    <span>&nbsp;</span>
                                     <button value="" name="LeaderBoardType" onClick={this.leaderBoardMenu}>Back</button>
                                 </div>
                             </Container>
@@ -280,20 +268,17 @@ class LeaderBoard extends Component {
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                         <div>
                             <Container>
-                                <h1>Leader Board</h1>
-                                <h3>30 Question (Hard)</h3>
-                                <br /><br />
+                                <h1 className="text-center">Leader Board</h1>
+                                <h3 className="text-center">30 Question (Hard)</h3>
                                 <div className="text-center">
-                                    <h5>1st:  {this.state.LeaderBoardThirtyHard[0].email} {this.state.LeaderBoardThirtyHard[0].score}</h5>
-                                    <h5>2nd:  {this.state.LeaderBoardThirtyHard[1].email} {this.state.LeaderBoardThirtyHard[1].score}</h5>
-                                    <h5>3rd:  {this.state.LeaderBoardThirtyHard[2].email} {this.state.LeaderBoardThirtyHard[2].score}</h5>
-                                    <h5>4th:  {this.state.LeaderBoardThirtyHard[3].email} {this.state.LeaderBoardThirtyHard[3].score}</h5>
-                                    <h5>5th:  {this.state.LeaderBoardThirtyHard[4].email} {this.state.LeaderBoardThirtyHard[4].score}</h5>
+                                    <h5>1st:  {this.state.LeaderBoardThirtyHard[0].email} scored a {this.state.LeaderBoardThirtyHard[0].score}</h5>
+                                    <h5>2nd:  {this.state.LeaderBoardThirtyHard[1].email} scored a {this.state.LeaderBoardThirtyHard[1].score}</h5>
+                                    <h5>3rd:  {this.state.LeaderBoardThirtyHard[2].email} scored a {this.state.LeaderBoardThirtyHard[2].score}</h5>
+                                    <h5>4th:  {this.state.LeaderBoardThirtyHard[3].email} scored a {this.state.LeaderBoardThirtyHard[3].score}</h5>
+                                    <h5>5th:  {this.state.LeaderBoardThirtyHard[4].email} scored a {this.state.LeaderBoardThirtyHard[4].score}</h5>
                                 </div>
-                                <br /><br />
                                 <div className="text-center">
                                     <Link to="/Menu"><button>Main Menu</button></Link>
-                                    <span>&nbsp;</span>
                                     <button value="" name="LeaderBoardType" onClick={this.leaderBoardMenu}>Back</button>
                                 </div>
                             </Container>
@@ -303,29 +288,29 @@ class LeaderBoard extends Component {
             case (""):
                 return (
                     <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
-
                         <div>
                             <Container>
                                 <h1 className="text-center">Leader Boards</h1>
-                                <br /><br />
-                                <div className="text-center">
-                                    <button value="tenEasy" name="LeaderBoardType" onClick={this.tenEasy}>Ten Easy</button>
-                                    <span>&nbsp;</span>
-                                    <button value="twentEasy" name="LeaderBoardType" onClick={this.twentyEasy}>Twenty Easy</button>
-                                    <span>&nbsp;</span>
-                                    <button value="thirtyEasy" name="LeaderBoardType" onClick={this.thirtyEasy}>Thirty Easy</button>
+                                <div className="text-center border border-success">
+                                    <Row>
+                                        <Col>
+                                            <button value="tenEasy" name="LeaderBoardType" onClick={this.tenEasy}>Ten Easy</button>
+                                            <button value="twentEasy" name="LeaderBoardType" onClick={this.twentyEasy}>Twenty Easy</button>
+                                            <button value="thirtyEasy" name="LeaderBoardType" onClick={this.thirtyEasy}>Thirty Easy</button>
+                                        </Col>
+                                    </Row>
                                 </div>
-                                <br /><br />
-                                <div className="text-center">
-                                    <button value="tenHard" name="LeaderBoardType" onClick={this.tenHard}>Ten Hard</button>
-                                    <span>&nbsp;</span>
-                                    <button value="twentyHard" name="LeaderBoardType" onClick={this.twentyHard}>Twenty Hard</button>
-                                    <span>&nbsp;</span>
-                                    <button value="thirtyHard" name="LeaderBoardType" onClick={this.thirtyHard}>Thirty Hard</button>
+                                <div className="text-center border border-danger">
+                                    <Row>
+                                        <Col>
+                                            <button value="tenHard" name="LeaderBoardType" onClick={this.tenHard}>Ten Hard</button>
+                                            <button value="twentyHard" name="LeaderBoardType" onClick={this.twentyHard}>Twenty Hard</button>
+                                            <button value="thirtyHard" name="LeaderBoardType" onClick={this.thirtyHard}>Thirty Hard</button>
+                                        </Col>
+                                    </Row>
                                 </div>
-                                <br /><br />
                                 <div className="text-center">
-                                    <Link to="/Menu"><button>Main Menu</button></Link>
+                                    <Link to="/Menu"><button className="leaderBoardMenu">Main Menu</button></Link>
                                 </div>
                             </Container>
                         </div>

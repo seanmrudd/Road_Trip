@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
+import "./style.css";
 
 
 class Login extends Component {
@@ -26,6 +27,11 @@ class Login extends Component {
                 password
             }
         }).then((response) => {
+            const isAuthenticated = response.data.isAuthenticated;
+            const email = response.data.email;
+            window.localStorage.setItem("isAuthenticated", isAuthenticated);
+            window.localStorage.setItem("email", email);
+
             console.log(`Data: ${response.data}`)
             if (response.data) {
                 this.props.history.push("/Menu")
@@ -50,6 +56,11 @@ class Login extends Component {
 
 
     render() {
+        // const isAuthenticated = window.localStorage.getItem("isAuthenticated");
+
+        // if (isAuthenticated){
+        //     return <Redirect to="/Menu" />
+        // }
         return (
             <Animated animationIn="fadeIn slower" animationOut="fadeOut" isVisible={true}>
                 <div>

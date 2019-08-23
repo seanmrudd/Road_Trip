@@ -1,0 +1,17 @@
+.btnLeaderBoard {
+    background-color: red;
+    color: white;
+    border: 0;
+}
+
+.btnPersonalBest {
+    background-color: white;
+    color: blue;
+    border: 0;
+}
+
+.btnLogOut {
+    background-color: blue;
+    color: white;
+    border: 0;
+}

@@ -1,0 +1,11 @@
+.btnHard {
+    border-color: red;
+    border-width: 1px;
+    background-color: white;
+}
+
+.btnEasy {
+    border-color: green;
+    border-width: 1px;
+    background-color: white;
+}

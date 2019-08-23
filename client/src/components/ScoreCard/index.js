@@ -1,12 +1,20 @@
 import React from "react";
 import "./style.css";
+import Col from "../Col";
+import Row from "../Row";
 
 function ScoreCard(props) {
   return (
     <div className="scoreCard text-center">
       <div className="score-container">
-        <h5>Question Number: {props.totalNumber}</h5>
-        <h5>Correct Answers So Far: {props.numberCorrect}</h5>
+        <Row>
+          <Col>
+            <h5>Question: {props.totalNumber}/{props.numberOfQuestions}</h5>
+          </Col>
+          <Col>
+            <h5>Correct: {props.numberCorrect}/{props.numberOfQuestionsAsked}</h5>
+          </Col>
+        </Row>
       </div>
     </div>
   );

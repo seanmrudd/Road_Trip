@@ -10,6 +10,7 @@ import Login from "./pages/Login/index";
 import SignUp from "./pages/SignUp/index";
 import Menu from "./pages/Menu/index";
 import PersonalBests from "./pages/PersonalBests/index";
+import Wrapper from "./components/Wrapper";
 
 
 function App() {
@@ -17,16 +18,18 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={FadeIn} />
-          <Route path="/Game" component={Game} />
-          <Route path="/GameHard" component={GameHard} />
-          <Route path="/GameResults" component={GameResults} />
-          <Route path="/LeaderBoard" component={LeaderBoard} />
-          <Route path="/Login" component={Login} />
-          <Route path="/Menu" component={Menu} />
-          <Route path="/PersonalBests" component={PersonalBests} />
-          <Route path="/SignUp" component={SignUp} />
-          <Route path="/GameMode" component={GameMode} />
+          <Wrapper>
+            <Route exact path="/" component={FadeIn} />
+            <Route path="/Game" component={Game} />
+            <Route path="/GameHard" component={GameHard} />
+            <Route path="/GameResults" component={GameResults} />
+            <Route path="/LeaderBoard" component={LeaderBoard} />
+            <Route path="/Login" component={Login} />
+            <Route path="/Menu" component={Menu} />
+            <Route path="/PersonalBests" component={PersonalBests} />
+            <Route path="/SignUp" component={SignUp} />
+            <Route path="/GameMode" component={GameMode} />
+          </Wrapper>
         </Switch>
       </div>
     </Router>
