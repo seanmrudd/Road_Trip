@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
+import Row from "../../components/Row";
 
 
 class Signup extends Component {
@@ -45,6 +46,14 @@ class Signup extends Component {
         });
     };
 
+    togglePasswordHidden = (event) => {
+        event.preventDefault();
+        this.setState({
+            hidden: !this.state.hidden,
+            passwordButton: !this.state.passwordButton
+        })
+    }
+
     handleChange = event => {
         const { name, value } = event.target;
 
@@ -61,11 +70,14 @@ class Signup extends Component {
                     <Container>
                         <h2>Sign Up</h2>
                         <form onSubmit={this.handleSubmit}>
-                            <input type="text" name="username" placeholder="Username" onChange={this.handleChange} />
-                            <span>&nbsp;</span>
-                            <input type="text" name="password" placeholder="Password" onChange={this.handleChange} />
-                            <span>&nbsp;</span>
-                            <button>Sign Up</button><br />
+                            <Row>
+                                <input className="inputField" type="text" name="username" placeholder="Username" onChange={this.handleChange} />
+                                <input className="inputField" type={this.state.hidden ? "password" : "text"} name="password" placeholder="Password" onChange={this.handleChange} />
+                            </Row>
+                            <Row>
+                                <button onClick={this.togglePasswordHidden}>{this.state.passwordButton ? "Show Password" : "Hide Password"}</button>
+                                <button>Login</button>
+                            </Row>
                         </form>
                         Already have an account? <Link to="/Login">Click Here</Link>
                         <p>{this.state.errorMessage}</p>

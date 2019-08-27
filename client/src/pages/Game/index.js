@@ -7,6 +7,7 @@ import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
 import Col from "../../components/Col";
 import Row from "../../components/Row";
+import Timer from "../../components/Timer";
 
 class Game extends Component {
     state = {
@@ -20,7 +21,9 @@ class Game extends Component {
         answers: [],
         numberCorrect: 0,
         totalNumber: 0,
-        difficulty: true
+        difficulty: true,
+        timer: 0,
+        timeLeft: 5
     };
 
     componentDidMount() {
@@ -174,9 +177,26 @@ class Game extends Component {
 
     randomizeAnswers = () => {
         let newAnswers = this.state.answerArray.sort();
-        this.setState({ answers: newAnswers });
-    }
+        this.setState({ answers: newAnswers }, function () {
+            this.startTimer();
+        });
+    };
 
+    startTimer = () => {
+        this.timer = setInterval(this.countDown, 1000);
+    };
+
+    countDown = () => {
+        this.setState({
+            timeLeft: this.state.timeLeft -1
+        })
+        if(this.state.timeLeft === -1){
+            clearInterval(this.timer)
+            this.setState({
+                timeLeft: 5
+            }, this.pickState())
+        }
+    }
 
     //Function to validate user answer
 
@@ -234,6 +254,13 @@ class Game extends Component {
                                 />
                             </Col>
                         </Row>
+                        <Col>
+                            <Row>
+                                <Timer 
+                                    timeLeft = {this.state.timeLeft}
+                                />
+                            </Row>
+                        </Col>
                         <Row>
                             <Col>
                                 <QuestionCard
