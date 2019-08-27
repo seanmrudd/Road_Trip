@@ -42,4 +42,47 @@ export default {
   saveToLeaderBoardThirtyHard: function(data) {
     return axios.post("/api/thirtyHard", data);
   }
+
+  // getTenEasyPersonal: function() {
+  //   return axios.get("/userUpdate/tenEasyPersonal");
+  // },
+  // updateTenEasyPersonal: function(data){
+  //   return axios.update("/userUpdate/tenEasyPersonal", data);
+  // },
+
+  // getTwentyEasyPersonal: function() {
+  //   return axios.get("/userUpdate/twentyEasyPersonal");
+  // },
+  // updateTwentyEasyPersonal: function(data){
+  //   return axios.update("/userUpdate/twentyEasyPersonal", data);
+  // },
+  
+  // getThirtyEasyPersonal: function() {
+  //   return axios.get("/userUpdate/thirtyEasyPersonal");
+  // },
+  // updateThirtyEasyPersonal: function(data){
+  //   return axios.update("/userUpdate/thirtyEasyPersonal", data);
+  // },
+  
+  // getTenHardPersonal: function() {
+  //   return axios.get("/userUpdate/tenHardPersonal");
+  // },
+  // updateTenHardPersonal: function(data){
+  //   return axios.update("/userUpdate/tenHardPersonal", data);
+  // },
+  
+  // getTwentyHardPersonal: function() {
+  //   return axios.get("/userUpdate/twentyHardPersonal");
+  // },
+  // updateTwentyHardPersonal: function(data){
+  //   return axios.update("/userUpdate/twentyHardPersonal", data);
+  // },
+  
+  // getThirtyHardPersonal: function() {
+  //   return axios.get("/userUpdate/thirtyHardPersonal");
+  // },
+  // updateThirtyHardPersonal: function(data){
+  //   return axios.update("/userUpdate/thirtyHardPersonal", data);
+  // },
+  
 };

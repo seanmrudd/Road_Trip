@@ -2,8 +2,8 @@ const Strategy = require("passport-local").Strategy;
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
-const LoginStrategy = new Strategy({usernameField: "email"}, function(email, password, done){
-    User.findOne({email}).lean().exec((err, user) => {
+const LoginStrategy = new Strategy(function(username, password, done){
+    User.findOne({username}).lean().exec((err, user) => {
         if (err) {
             return done(err, null);
         }

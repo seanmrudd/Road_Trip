@@ -4,8 +4,8 @@ const bcrypt = require("bcrypt");
 
 const salt = bcrypt.genSaltSync(10);
 
-const SignupStrategy = new Strategy({passReqToCallback: true, usernameField: "email"}, function(req, email, password, done){
-    User.findOne({email}).lean().exec((err, user) => {
+const SignupStrategy = new Strategy({ passReqToCallback: true }, function(req, username, password, done){
+    User.findOne({username}).lean().exec((err, user) => {
         if (err) {
             return done(err, null);
         }
@@ -16,7 +16,7 @@ const SignupStrategy = new Strategy({passReqToCallback: true, usernameField: "em
         const encryptedPassword = bcrypt.hashSync(password, salt)
 
         let newUser = new User({
-            email,
+            username,
             password: encryptedPassword
         })
 

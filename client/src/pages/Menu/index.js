@@ -41,7 +41,7 @@ class Flags extends Component {
                         <Link to="/GameMode"><h3 className="text-center">Start Game</h3></Link><br />
                         <p className="text-center">
                             <Link to="/LeaderBoard"><button className="btnLeaderBoard">Leader Boards</button></Link>
-                            <Link to="/PersonalBests"><button className="btnPersonalBest">Personal Bests</button></Link>
+                            {/* <Link to="/PersonalBests"><button className="btnPersonalBest">Personal Bests</button></Link> */}
                             <Link to="/Login"><button className="btnLogOut" onClick={this.handleLogOut}>Log Out</button></Link>
                         </p>
                     </Container>

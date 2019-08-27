@@ -6,7 +6,9 @@ module.exports = {
       .find(req.query)
       .sort({ score: -1 })
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => res.status(422).json(err),
+      console.log(req.query));
+      
   },
   findAllTwentyEasy: function(req, res) {
     db.LeaderBoardTwentyEasy

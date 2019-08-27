@@ -8,7 +8,7 @@ import { Animated } from "react-animated-css";
 class Signup extends Component {
 
     state = {
-        email: "",
+        username: "",
         password: "",
         errorMessage: ""
     };
@@ -16,17 +16,22 @@ class Signup extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        const { email, password } = this.state;
+        const { username, password } = this.state;
 
         axios({
             url: "/authentication/signup",
             method: "POST",
             data: {
-                email,
+                username,
                 password
             }
         }).then((response) => {
-            console.log(`Data: ${response.data}`)
+            const isAuthenticated = response.data.isAuthenticated;
+            const username = response.data.username;
+            window.localStorage.setItem("isAuthenticated", isAuthenticated);
+            window.localStorage.setItem("username", username);
+
+            console.log(`Data: ${response}`)
             if (response.data) {
                 this.props.history.push("/Menu")
             } else this.setState({
@@ -56,7 +61,7 @@ class Signup extends Component {
                     <Container>
                         <h2>Sign Up</h2>
                         <form onSubmit={this.handleSubmit}>
-                            <input type="text" name="email" placeholder="Email" onChange={this.handleChange} />
+                            <input type="text" name="username" placeholder="Username" onChange={this.handleChange} />
                             <span>&nbsp;</span>
                             <input type="text" name="password" placeholder="Password" onChange={this.handleChange} />
                             <span>&nbsp;</span>

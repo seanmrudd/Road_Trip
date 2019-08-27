@@ -36,7 +36,7 @@ class Flags extends Component {
                 switch (this.state.totalNumber) {
                     case (10):
                         API.saveToLeaderBoardTenEasy({
-                            email: localStorage.getItem("email"),
+                            username: localStorage.getItem("username"),
                             score: this.state.percentage
                         })
                             .catch(err => console.log(err));
@@ -96,6 +96,13 @@ class Flags extends Component {
                 console.log("not working");
         }
     }
+
+    // saveToPersonalBest = (data) => {
+    //     API.getTenEasyPersonal({
+    //         username: localStorage.getItem("username")
+    //     }).then(console.log(data))
+    // }
+
 
     percentage = () => {
         console.log(((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2))

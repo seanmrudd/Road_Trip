@@ -9,7 +9,7 @@ import "./style.css";
 class Login extends Component {
 
     state = {
-        email: "",
+        username: "",
         password: "",
         errorMessage: ""
     };
@@ -17,20 +17,20 @@ class Login extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        const { email, password } = this.state;
+        const { username, password } = this.state;
 
         axios({
             url: "/authentication/signin",
             method: "POST",
             data: {
-                email,
+                username,
                 password
             }
         }).then((response) => {
             const isAuthenticated = response.data.isAuthenticated;
-            const email = response.data.email;
+            const username = response.data.username;
             window.localStorage.setItem("isAuthenticated", isAuthenticated);
-            window.localStorage.setItem("email", email);
+            window.localStorage.setItem("username", username);
 
             console.log(`Data: ${response.data}`)
             if (response.data) {
@@ -67,7 +67,7 @@ class Login extends Component {
                     <Container>
                         <h2>Login</h2>
                         <form onSubmit={this.handleSubmit}>
-                            <input type="text" name="email" placeholder="Email" onChange={this.handleChange} />
+                            <input type="text" name="username" placeholder="Username" onChange={this.handleChange} />
                             <span>&nbsp;</span>
                             <input type="text" name="password" placeholder="Password" onChange={this.handleChange} />
                             <span>&nbsp;</span>

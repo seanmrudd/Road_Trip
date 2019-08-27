@@ -1,6 +1,5 @@
 module.exports = {
   Users: require("./user"),
-  // LeaderBoard: require("./leaderBoard")
   LeaderBoardTenEasy: require("./leaderBoardTenEasy"),
   LeaderBoardTwentyEasy: require("./leaderBoardTwentyEasy"),
   LeaderBoardThirtyEasy: require("./leaderBoardThirtyEasy"),

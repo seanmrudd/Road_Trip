@@ -94,7 +94,7 @@ class GameHard extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        if (this.state.userAnswer === this.state.correctAnswer) {
+        if (this.state.userAnswer.trim() === this.state.correctAnswer) {
             this.addPoint();
         } else {
             this.pickState();

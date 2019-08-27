@@ -2,24 +2,43 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    email: {
+    username: {
         type: String,
         trim: true,
         lowercase: true,
-        unique: true,
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+        unique: true
     },
     password: {
         type: String,
-        min: [6, "Not enought characters"]
+        min: 1
     },
-    data: {
-            tenQuestionEasy: Number,
-            twentyQuestionEasy: Number,
-            thirtyQuestionEasy: Number,
-            tenQuestionHard: Number,
-            twentyQuestionHard: Number,
-            thirtyQuestionHard: Number
+    tenQuestionEasy: {
+        type: Number,
+        default: 0
+    },
+    twentyQuestionEasy: {
+        type: Number,
+        default: 0
+    },
+    thirtyQuestionEasy: {
+        type: Number,
+        default: 0
+    },
+    tenQuestionHard: {
+        type: Number,
+        default: 0
+    },
+    twentyQuestionHard: {
+        type: Number,
+        default: 0
+    },
+    thirtyQuestionHard: {
+        type: Number,
+        default: 0
+    },
+    userCreated: {
+        type: Date,
+        default: Date.now
     }
 });
 
