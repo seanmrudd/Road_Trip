@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import API from "../../utils/API";
 import Container from "../../components/Container";
+import "./style.css";
 
 class Flags extends Component {
 
@@ -9,7 +10,9 @@ class Flags extends Component {
         numberCorrect: 0,
         totalNumber: 0,
         percentage: 0,
-        difficulty: null
+        difficulty: null,
+        timeRemaining: 0,
+        gameScore: 0
     }
 
     componentDidMount() {
@@ -22,7 +25,8 @@ class Flags extends Component {
         this.setState({
             numberCorrect: data[0],
             totalNumber: data[1],
-            difficulty: data[2]
+            difficulty: data[2],
+            timeRemaining: data[3]
         },
             function () {
                 console.log(this.state.numberCorrect + "and" + this.state.totalNumber)
@@ -37,7 +41,7 @@ class Flags extends Component {
                     case (10):
                         API.saveToLeaderBoardTenEasy({
                             username: localStorage.getItem("username"),
-                            score: this.state.percentage
+                            score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
                         console.log("working");
@@ -45,7 +49,7 @@ class Flags extends Component {
                     case (20):
                         API.saveToLeaderBoardTwentyEasy({
                             email: localStorage.getItem("email"),
-                            score: this.state.percentage
+                            score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
                         console.log("working");
@@ -53,7 +57,7 @@ class Flags extends Component {
                     case (30):
                         API.saveToLeaderBoardThirtyEasy({
                             email: localStorage.getItem("email"),
-                            score: this.state.percentage
+                            score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
                         console.log("working");
@@ -67,7 +71,7 @@ class Flags extends Component {
                     case (10):
                         API.saveToLeaderBoardTenHard({
                             email: localStorage.getItem("email"),
-                            score: this.state.percentage
+                            score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
                         console.log("working");
@@ -75,7 +79,7 @@ class Flags extends Component {
                     case (20):
                         API.saveToLeaderBoardTwentyHard({
                             email: localStorage.getItem("email"),
-                            score: this.state.percentage
+                            score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
                         console.log("working");
@@ -83,7 +87,7 @@ class Flags extends Component {
                     case (30):
                         API.saveToLeaderBoardThirtyHard({
                             email: localStorage.getItem("email"),
-                            score: this.state.percentage
+                            score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
                         console.log("working");
@@ -107,8 +111,20 @@ class Flags extends Component {
     percentage = () => {
         console.log(((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2))
         this.setState({ percentage: ((this.state.numberCorrect / this.state.totalNumber) * 100).toFixed(2) }, function () {
-            this.saveToLeaderBoards();
+            this.gameScore();
             console.log(this.state.percentage + "and" + this.state.difficulty)
+        })
+    }
+
+    gameScore = () => {
+        let numberCorrect = this.state.numberCorrect;
+        let timeRemaining = this.state.timeRemaining;
+
+        let gameScore = ((numberCorrect*timeRemaining)*this.state.percentage)*10
+        this.setState({
+            gameScore: gameScore
+        }, function () {
+            this.saveToLeaderBoards();
         })
     }
 
@@ -116,12 +132,11 @@ class Flags extends Component {
         return (
             <div>
                 <Container>
-                    <h1 className="text-center">Game Results</h1>
-                    <br /><br />
-                    <h3 className="text-center">You scored a {this.state.percentage}%.</h3>
-                    <br />
+                    <h1 className="text-center gameResultsHeader">Game Results</h1>
+                    <h3 className="text-center gameResults">You answered {this.state.percentage}% correctly.</h3>
+                    <h3 className="text-center gameResults">Your game score is {this.state.gameScore}.</h3>
                     <p className="text-center">
-                        <Link to="/Menu"><button>Main Menu</button></Link>
+                        <Link to="/Menu"><button className="gameResultsBtn">Main Menu</button></Link>
                     </p>
                 </Container>
             </div>

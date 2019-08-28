@@ -151,6 +151,8 @@ class LeaderBoard extends Component {
         });
     };
 
+    
+
     render() {
         switch (this.state.LeaderBoardType) {
             case ("tenEasy"):

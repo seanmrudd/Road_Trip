@@ -1,0 +1,14 @@
+.gameResultsHeader {
+    margin: 2rem;
+}
+
+.gameResults {
+    margin: 2rem;
+}
+
+.gameResultsBtn {
+    width: 50%;
+    border: 0;
+    background-color: rgb(3, 0, 177);
+    color: white
+}

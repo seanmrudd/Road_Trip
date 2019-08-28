@@ -11,7 +11,9 @@ class Signup extends Component {
     state = {
         username: "",
         password: "",
-        errorMessage: ""
+        errorMessage: "",
+        hidden: true,
+        passwordButton: true
     };
 
     handleSubmit = event => {
@@ -75,8 +77,8 @@ class Signup extends Component {
                                 <input className="inputField" type={this.state.hidden ? "password" : "text"} name="password" placeholder="Password" onChange={this.handleChange} />
                             </Row>
                             <Row>
-                                <button onClick={this.togglePasswordHidden}>{this.state.passwordButton ? "Show Password" : "Hide Password"}</button>
                                 <button>Login</button>
+                                <button onClick={this.togglePasswordHidden}>{this.state.passwordButton ? "Show Password" : "Hide Password"}</button>
                             </Row>
                         </form>
                         Already have an account? <Link to="/Login">Click Here</Link>

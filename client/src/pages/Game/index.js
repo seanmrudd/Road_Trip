@@ -23,7 +23,8 @@ class Game extends Component {
         totalNumber: 0,
         difficulty: true,
         timer: 0,
-        timeLeft: 5
+        timeLeft: 5,
+        timeRemaining: 0
     };
 
     componentDidMount() {
@@ -188,9 +189,9 @@ class Game extends Component {
 
     countDown = () => {
         this.setState({
-            timeLeft: this.state.timeLeft -1
+            timeLeft: this.state.timeLeft - 1
         })
-        if(this.state.timeLeft === -1){
+        if (this.state.timeLeft === 0) {
             clearInterval(this.timer)
             this.setState({
                 timeLeft: 5
@@ -208,7 +209,10 @@ class Game extends Component {
         if (userPick === this.state.correctAnswer) {
             this.addPoint();
         } else {
-            this.pickState();
+            clearInterval(this.timer)
+            this.setState({
+                timeLeft: 5
+            }, this.pickState())
         }
     }
 
@@ -216,15 +220,30 @@ class Game extends Component {
     //Function to add point
     addPoint = () => {
         let newNumberCorrect = this.state.numberCorrect + 1;
-        this.setState({ numberCorrect: newNumberCorrect }, function () {
-            this.nextQuestion()
-        });
+        this.setState({
+            numberCorrect: newNumberCorrect
+        }, function () {
+            this.newTimeRemaining()
+        })
     }
 
+    //Function to calculate how much time is left on the clock
+    newTimeRemaining = () => {
+        let newTimeRemaing = this.state.timeLeft + this.state.timeRemaining;
+        this.setState({
+            timeRemaining: newTimeRemaing
+        }, function () {
+            console.log(this.state.timeRemaining)
+            this.nextQuestion();
+        })
+    }
 
     //Function to move on to next question
     nextQuestion = () => {
-        this.pickState();
+        clearInterval(this.timer)
+        this.setState({
+            timeLeft: 5
+        }, this.pickState())
     }
 
 
@@ -233,7 +252,7 @@ class Game extends Component {
     endGame = () => {
         this.props.history.push({
             pathname: "/GameResults",
-            data: [this.state.numberCorrect, this.state.totalNumber, this.state.difficulty]
+            data: [this.state.numberCorrect, this.state.totalNumber, this.state.difficulty, this.state.timeRemaining]
         });
     }
 
@@ -254,13 +273,9 @@ class Game extends Component {
                                 />
                             </Col>
                         </Row>
-                        <Col>
-                            <Row>
-                                <Timer 
-                                    timeLeft = {this.state.timeLeft}
-                                />
-                            </Row>
-                        </Col>
+                        <Timer
+                            timeLeft={this.state.timeLeft}
+                        />
                         <Row>
                             <Col>
                                 <QuestionCard

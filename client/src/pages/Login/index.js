@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
 import "./style.css";
-import Col from "../../components/Col";
 import Row from "../../components/Row";
 
 
@@ -84,8 +83,8 @@ class Login extends Component {
                                 <input className="inputField" type={this.state.hidden ? "password" : "text"} name="password" placeholder="Password" onChange={this.handleChange} />
                             </Row>
                             <Row>
-                                <button onClick={this.togglePasswordHidden}>{this.state.passwordButton ? "Show Password" : "Hide Password"}</button>
                                 <button>Login</button>
+                                <button onClick={this.togglePasswordHidden}>{this.state.passwordButton ? "Show Password" : "Hide Password"}</button>
                             </Row>
                         </form>
                         Need to make an account? <Link to="/SignUp">Click Here</Link>
