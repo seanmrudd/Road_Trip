@@ -23,7 +23,7 @@ class Game extends Component {
         totalNumber: 0,
         difficulty: true,
         timer: 0,
-        timeLeft: 5,
+        timeLeft: 10,
         timeRemaining: 0
     };
 

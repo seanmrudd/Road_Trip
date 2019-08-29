@@ -77,7 +77,7 @@ class GameMode extends Component {
                             </div>
                             <br />
                             <p className="text-center">
-                                <Link to="/Menu"><button className="leaderBoardMenu">Main Menu</button></Link>
+                                <Link to="/Menu"><button className="gameModeBtn">Main Menu</button></Link>
                             </p>
                         </Container>
                     </div>
@@ -136,7 +136,7 @@ class GameMode extends Component {
                         </div>
                         <br />
                         <p className="text-center">
-                            <Link to="/Menu"><button className="leaderBoardMenu">Main Menu</button></Link>
+                            <Link to="/Menu"><button className="gameModeBtn">Main Menu</button></Link>
                         </p>
                     </Container>
                 </div>

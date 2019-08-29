@@ -1,3 +1,17 @@
 .inputField {
     margin: 5px
 }
+
+.loginSubmit{
+    width: 40%;
+    background-color: blue;
+    color: white;
+    border: 0;
+}
+
+.loginShowPassword{
+    width: 40%;
+    background-color: red;
+    color: white;
+    border: 0;
+}

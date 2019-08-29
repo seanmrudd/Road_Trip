@@ -296,18 +296,18 @@ class LeaderBoard extends Component {
                                 <div className="text-center border border-success">
                                     <Row>
                                         <Col>
-                                            <button value="tenEasy" name="LeaderBoardType" onClick={this.tenEasy}>Ten Easy</button>
-                                            <button value="twentEasy" name="LeaderBoardType" onClick={this.twentyEasy}>Twenty Easy</button>
-                                            <button value="thirtyEasy" name="LeaderBoardType" onClick={this.thirtyEasy}>Thirty Easy</button>
+                                            <button className="leaderBoardBtnEasy" value="tenEasy" name="LeaderBoardType" onClick={this.tenEasy}>Ten Easy</button>
+                                            <button className="leaderBoardBtnEasy" value="twentEasy" name="LeaderBoardType" onClick={this.twentyEasy}>Twenty Easy</button>
+                                            <button className="leaderBoardBtnEasy" value="thirtyEasy" name="LeaderBoardType" onClick={this.thirtyEasy}>Thirty Easy</button>
                                         </Col>
                                     </Row>
                                 </div>
                                 <div className="text-center border border-danger">
                                     <Row>
                                         <Col>
-                                            <button value="tenHard" name="LeaderBoardType" onClick={this.tenHard}>Ten Hard</button>
-                                            <button value="twentyHard" name="LeaderBoardType" onClick={this.twentyHard}>Twenty Hard</button>
-                                            <button value="thirtyHard" name="LeaderBoardType" onClick={this.thirtyHard}>Thirty Hard</button>
+                                            <button className="leaderBoardBtnHard" value="tenHard" name="LeaderBoardType" onClick={this.tenHard}>Ten Hard</button>
+                                            <button className="leaderBoardBtnHard" value="twentyHard" name="LeaderBoardType" onClick={this.twentyHard}>Twenty Hard</button>
+                                            <button className="leaderBoardBtnHard" value="thirtyHard" name="LeaderBoardType" onClick={this.thirtyHard}>Thirty Hard</button>
                                         </Col>
                                     </Row>
                                 </div>

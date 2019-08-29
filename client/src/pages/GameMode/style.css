@@ -1,11 +1,18 @@
 .btnHard {
-    border-color: red;
-    border-width: 1px;
+    border: 1px solid red;
     background-color: white;
+    color: black;
 }
 
 .btnEasy {
-    border-color: green;
-    border-width: 1px;
+    border: 1px solid green;
     background-color: white;
+    color: black;
+}
+
+.gameModeBtn {
+    border: 0;
+    background-color: blue;
+    color: white;
+    width: 40%;
 }

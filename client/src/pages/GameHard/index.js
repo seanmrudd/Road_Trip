@@ -3,6 +3,9 @@ import usStates from "../../statesData.json";
 import QuestionCard from "../../components/QuestionCard";
 import ScoreCard from "../../components/ScoreCard";
 import Container from "../../components/Container";
+import Timer from "../../components/Timer";
+import Col from "../../components/Col";
+import Row from "../../components/Row";
 
 class GameHard extends Component {
 
@@ -15,7 +18,10 @@ class GameHard extends Component {
         userAnswer: "",
         numberCorrect: 0,
         totalNumber: 0,
-        difficulty: false
+        difficulty: false,
+        timer: 0,
+        timeLeft: 15,
+        timeRemaining: 0
     };
 
     componentDidMount() {
@@ -76,6 +82,7 @@ class GameHard extends Component {
         let newCorrectAnswer = this.state.stateJSON.capital;
         this.setState({ correctAnswer: newCorrectAnswer }, function () {
             console.log(this.state.correctAnswer)
+            this.startTimer();
         });
         console.log(newCorrectAnswer);
     }
@@ -84,10 +91,28 @@ class GameHard extends Component {
         let newCorrectAnswer = this.state.stateJSON.name;
         this.setState({ correctAnswer: newCorrectAnswer }, function () {
             console.log(this.state.correctAnswer)
+            this.startTimer();
         });
         console.log(newCorrectAnswer);
     }
 
+
+    //Function to start countdown timer
+    startTimer = () => {
+        this.timer = setInterval(this.countDown, 1000);
+    };
+
+    countDown = () => {
+        this.setState({
+            timeLeft: this.state.timeLeft - 1
+        })
+        if (this.state.timeLeft === 0) {
+            clearInterval(this.timer)
+            this.setState({
+                timeLeft: 5
+            }, this.pickState())
+        }
+    }
 
     //Function to validate user answer
 
@@ -115,16 +140,31 @@ class GameHard extends Component {
     //Function to add point
     addPoint = () => {
         let newNumberCorrect = this.state.numberCorrect + 1;
-        this.setState({ numberCorrect: newNumberCorrect }, function () {
-            console.log(this.state.correctAnswer);
-            this.nextQuestion()
-        });
+        this.setState({
+            numberCorrect: newNumberCorrect
+        }, function () {
+            this.newTimeRemaining()
+        })
+    }
+
+    //Function to calculate how much time is left on the clock
+    newTimeRemaining = () => {
+        let newTimeRemaing = this.state.timeLeft + this.state.timeRemaining;
+        this.setState({
+            timeRemaining: newTimeRemaing
+        }, function () {
+            console.log(this.state.timeRemaining)
+            this.nextQuestion();
+        })
     }
 
 
     //Function to move on to next question
     nextQuestion = () => {
-        this.pickState();
+        clearInterval(this.timer)
+        this.setState({
+            timeLeft: 15
+        }, this.pickState())
     }
 
 
@@ -133,7 +173,7 @@ class GameHard extends Component {
     endGame = () => {
         this.props.history.push({
             pathname: "/GameResults",
-            data: [this.state.numberCorrect, this.state.totalNumber, this.state.difficulty]
+            data: [this.state.numberCorrect, this.state.totalNumber, this.state.difficulty, this.state.timeRemaining]
         });
     }
 
@@ -142,15 +182,26 @@ class GameHard extends Component {
         return (
             <div>
                 <Container>
-                    <ScoreCard
-                        numberCorrect={this.state.numberCorrect}
-                        numberOfQuestions={this.state.numberOfQuestions}
-                        totalNumber={this.state.totalNumber}
-                        numberOfQuestionsAsked={this.state.totalNumber - 1}
+                    <Row>
+                        <Col>
+                            <ScoreCard
+                                numberCorrect={this.state.numberCorrect}
+                                numberOfQuestions={this.state.numberOfQuestions}
+                                totalNumber={this.state.totalNumber}
+                                numberOfQuestionsAsked={this.state.totalNumber - 1}
+                            />
+                        </Col>
+                    </Row>
+                    <Timer
+                        timeLeft={this.state.timeLeft}
                     />
-                    <QuestionCard
-                        question={this.state.question}
-                    />
+                    <Row>
+                        <Col>
+                            <QuestionCard
+                                question={this.state.question}
+                            />
+                        </Col>
+                    </Row>
                     <form className="text-center">
                         <input
                             value={this.state.userAnswer}

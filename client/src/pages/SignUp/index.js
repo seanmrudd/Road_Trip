@@ -77,8 +77,8 @@ class Signup extends Component {
                                 <input className="inputField" type={this.state.hidden ? "password" : "text"} name="password" placeholder="Password" onChange={this.handleChange} />
                             </Row>
                             <Row>
-                                <button>Login</button>
-                                <button onClick={this.togglePasswordHidden}>{this.state.passwordButton ? "Show Password" : "Hide Password"}</button>
+                                <button className="loginSubmit">Login</button>
+                                <button className="loginShowPassword" onClick={this.togglePasswordHidden}>{this.state.passwordButton ? "Show Password" : "Hide Password"}</button>
                             </Row>
                         </form>
                         Already have an account? <Link to="/Login">Click Here</Link>
