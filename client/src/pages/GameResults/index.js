@@ -48,7 +48,7 @@ class Flags extends Component {
                         break
                     case (20):
                         API.saveToLeaderBoardTwentyEasy({
-                            email: localStorage.getItem("email"),
+                            username: localStorage.getItem("username"),
                             score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
@@ -56,7 +56,7 @@ class Flags extends Component {
                         break
                     case (30):
                         API.saveToLeaderBoardThirtyEasy({
-                            email: localStorage.getItem("email"),
+                            username: localStorage.getItem("username"),
                             score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
@@ -70,7 +70,7 @@ class Flags extends Component {
                 switch (this.state.totalNumber) {
                     case (10):
                         API.saveToLeaderBoardTenHard({
-                            email: localStorage.getItem("email"),
+                            username: localStorage.getItem("username"),
                             score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
@@ -78,7 +78,7 @@ class Flags extends Component {
                         break
                     case (20):
                         API.saveToLeaderBoardTwentyHard({
-                            email: localStorage.getItem("email"),
+                            username: localStorage.getItem("username"),
                             score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
@@ -86,7 +86,7 @@ class Flags extends Component {
                         break
                     case (30):
                         API.saveToLeaderBoardThirtyHard({
-                            email: localStorage.getItem("email"),
+                            username: localStorage.getItem("username"),
                             score: this.state.gameScore
                         })
                             .catch(err => console.log(err));
