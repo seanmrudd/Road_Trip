@@ -187,6 +187,24 @@ class GameHard extends Component {
                 <Container>
                     <Row>
                         <Col>
+                            <QuestionCard
+                                question={this.state.question}
+                            />
+                        </Col>
+                    </Row>
+                    <form className="text-center">
+                        <span>
+                            <input
+                                value={this.state.userAnswer}
+                                name="userAnswer"
+                                onChange={this.handleChange}
+                                type="text"
+                                autoComplete="off"
+                            /><button onClick={this.handleSubmit}>&crarr;</button>
+                        </span>
+                    </form>
+                    <Row>
+                        <Col>
                             <ScoreCard
                                 numberCorrect={this.state.numberCorrect}
                                 numberOfQuestions={this.state.numberOfQuestions}
@@ -198,23 +216,6 @@ class GameHard extends Component {
                     <Timer
                         timeLeft={this.state.timeLeft}
                     />
-                    <Row>
-                        <Col>
-                            <QuestionCard
-                                question={this.state.question}
-                            />
-                        </Col>
-                    </Row>
-                    <form className="text-center">
-                        <input
-                            value={this.state.userAnswer}
-                            name="userAnswer"
-                            onChange={this.handleChange}
-                            type="text"
-                            autoComplete="off"
-                        />&nbsp;
-                        <button onClick={this.handleSubmit}>Submit</button>
-                    </form>
                 </Container>
             </div>
         )

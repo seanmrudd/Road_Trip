@@ -1,9 +1,8 @@
 .card-btn {
-    border-radius: 50%;
     font-size: 2rem;
     padding: 5px 5px;
     border: 0;
-    width: 75%;
+    width: 100%;
     background-color: white;
 }
 
