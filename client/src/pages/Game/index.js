@@ -211,7 +211,7 @@ class Game extends Component {
         } else {
             clearInterval(this.timer)
             this.setState({
-                timeLeft: 5
+                timeLeft: 10
             }, this.pickState())
         }
     }
@@ -242,7 +242,7 @@ class Game extends Component {
     nextQuestion = () => {
         clearInterval(this.timer)
         this.setState({
-            timeLeft: 5
+            timeLeft: 10
         }, this.pickState())
     }
 
