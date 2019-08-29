@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const LeaderBoardTwentyHardSchema = new Schema({
-        email: String,
+        username: String,
         score: Number
 });
 

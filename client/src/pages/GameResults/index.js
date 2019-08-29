@@ -31,6 +31,7 @@ class Flags extends Component {
             function () {
                 console.log(this.state.numberCorrect + "and" + this.state.totalNumber)
                 this.percentage();
+                console.log(localStorage.getItem("username"))
             })
     }
 
