@@ -194,7 +194,7 @@ class Game extends Component {
         if (this.state.timeLeft === 0) {
             clearInterval(this.timer)
             this.setState({
-                timeLeft: 5
+                timeLeft: 10
             }, this.pickState())
         }
     }
