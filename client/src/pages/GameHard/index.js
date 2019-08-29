@@ -122,7 +122,10 @@ class GameHard extends Component {
         if (this.state.userAnswer.trim() === this.state.correctAnswer) {
             this.addPoint();
         } else {
-            this.pickState();
+            clearInterval(this.timer)
+            this.setState({
+                timeLeft: 15
+            }, this.pickState())
         }
         this.setState({ userAnswer: "" })
 
