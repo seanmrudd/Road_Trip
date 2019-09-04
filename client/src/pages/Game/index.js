@@ -131,14 +131,14 @@ class Game extends Component {
             this.setState({ incorrectAnswer: newIncorrectAnswer }, function () {
                 console.log(this.state.incorrectAnswer)
                 if (this.state.answerArray.includes(this.state.incorrectAnswer)) {
-                    this.incorrectAnswerCapital()
+                    this.incorrectAnswerState()
                 } else {
                     this.setState(prevState => ({
                         answerArray: [...prevState.answerArray, this.state.incorrectAnswer]
                     }), function () {
                         console.log(this.state.answerArray)
                         if (this.state.answerArray.length < 4) {
-                            this.incorrectAnswerCapital();
+                            this.incorrectAnswerState();
                         } else {
                             this.randomizeAnswers();
                         }
