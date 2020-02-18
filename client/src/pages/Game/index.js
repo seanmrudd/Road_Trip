@@ -250,7 +250,7 @@ class Game extends Component {
     //Function to end game and head to GameResults.js
 
     endGame = () => {
-        this.props.history.push({
+        this.history.push({
             pathname: "/GameResults",
             data: [this.state.numberCorrect, this.state.totalNumber, this.state.difficulty, this.state.timeRemaining]
         });
