@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import usStates from "../../statesData.json";
 import QuestionCard from "../../components/QuestionCard";
 import AnswerCard from "../../components/AnswerCard";
@@ -250,7 +251,7 @@ class Game extends Component {
     //Function to end game and head to GameResults.js
 
     endGame = () => {
-        this.history.push({
+        this.props.history.push({
             pathname: "/GameResults",
             data: [this.state.numberCorrect, this.state.totalNumber, this.state.difficulty, this.state.timeRemaining]
         });
@@ -297,4 +298,4 @@ class Game extends Component {
     };
 }
 
-export default Game;
+export default withRouter(Game);

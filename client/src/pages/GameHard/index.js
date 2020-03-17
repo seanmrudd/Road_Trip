@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import usStates from "../../statesData.json";
 import QuestionCard from "../../components/QuestionCard";
 import ScoreCard from "../../components/ScoreCard";
@@ -222,4 +223,4 @@ class GameHard extends Component {
     };
 }
 
-export default GameHard;
+export default withRouter(GameHard);
