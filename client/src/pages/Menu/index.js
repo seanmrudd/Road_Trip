@@ -4,7 +4,7 @@ import Flag from "../../assets/images/download.png";
 import Container from "../../components/Container";
 import { Animated } from "react-animated-css";
 import "./style.css";
-import CorrectModal from "../../components/CorrectModal";
+// import CorrectModal from "../../components/CorrectModal";
 // import axios from "axios";
 
 
@@ -29,7 +29,7 @@ class Flags extends Component {
                         </p>
                     </Container>
                 </div>
-                <CorrectModal />
+                {/* <CorrectModal /> */}
             </Animated>
         );
     }
